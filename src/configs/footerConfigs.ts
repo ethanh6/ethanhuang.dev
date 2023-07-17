@@ -1,9 +1,10 @@
 export const footerConfigs = {
-  credit: 'Stark Industries',
+  credit: 'Ethan Huang',
   socialLinks: {
     email: 'eh543@cornell.edu ',
     github: 'https://github.com/ethanh6',
-    twitter: 'https://twitter.com/EasonChang_me',
+    medium: 'https://https://ethanh6.medium.com',
     linkedin: 'https://www.linkedin.com/in/ethanhuang0606/',
+    facebook: 'https://www.facebook.com/EthanHuang1999',
   },
 };
