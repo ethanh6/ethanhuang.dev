@@ -27,15 +27,17 @@ export default function Header() {
 
           <div className="flex items-center text-base leading-5 sm:gap-1">
             <div className="hidden gap-1 sm:flex">
-              {headerConfigs.navLinks.map((link) => (
-                <CustomLink
-                  key={link.title}
-                  href={link.href}
-                  className="rounded p-3 font-medium text-gray-900 transition-colors hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800"
-                >
-                  {link.title}
-                </CustomLink>
-              ))}
+              <div>
+                {headerConfigs.navLinks.map((link) => (
+                  <CustomLink
+                    key={link.title}
+                    href={link.href}
+                    className="rounded p-3 font-medium text-gray-900 transition-colors hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800"
+                  >
+                    {link.title}
+                  </CustomLink>
+                ))}
+              </div>
             </div>
 
             {/* <LanguageSwitch /> */}
