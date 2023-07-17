@@ -41,7 +41,7 @@ function CustomPre({ children, className, ...props }: Props) {
               'group-hover:flex': copied,
             })}
           >
-            {t('copied')}
+            {'copied'}
           </span>
 
           <button

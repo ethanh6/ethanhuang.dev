@@ -19,7 +19,7 @@ Or scroll down to see the [screenshots](#screenshots)
 - SEO friendly
 - Dark Mode
 - Command Palette
-- Comment system
+- Comment system (removed)
 - Page transition progress bar
 - RSS Feed
 - Sitemap

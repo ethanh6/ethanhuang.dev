@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArticleJsonLd } from 'next-seo';
 
@@ -23,7 +23,7 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const locale = context.locale!;
+  /* const locale = context.locale!; */
 
   const commandPalettePosts = getCommandPalettePosts();
   const posts = allPostsNewToOld.map((post) => ({
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['indexPage', 'common'])),
+      /* ...(await serverSideTranslations(locale, ['indexPage', 'common'])), */
       posts,
       commandPalettePosts,
     },
@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
-  const { t } = useTranslation(['indexPage', 'common']);
+  /* const { t } = useTranslation(['indexPage', 'common']); */
 
   useCommandPalettePostActions(commandPalettePosts);
 
@@ -63,15 +63,15 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
       />
 
       <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-        <h1 className="text-center sm:text-left">{t('intro-title')}</h1>
-        <p>{t('intro-1')}</p>
-        <p>{t('intro-2')}</p>
-        <p>{t('intro-3')}</p>
+        <h1 className="text-center sm:text-left">Hi, I'm Ethan.</h1>
+        <p>I'm a CS graduate at Cornell Tech.</p>
+        <p>I'm experienced with Python, C++ and Javascirpt.</p>
+        <p>I'm actively looking for job opportunities!</p>
       </div>
 
       <div className="my-4 divide-y divide-gray-200 transition-colors dark:divide-gray-700">
         <div className="prose prose-lg my-8 dark:prose-dark">
-          <h2>{t('latest-posts')}</h2>
+          <h2>Latest Posts</h2>
         </div>
 
         <PostList posts={posts} />

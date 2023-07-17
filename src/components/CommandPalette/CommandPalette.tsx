@@ -21,7 +21,7 @@ import {
   useMatches,
 } from 'kbar';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 import { useTheme } from 'next-themes';
 import React, { forwardRef, useMemo } from 'react';
 
@@ -32,7 +32,7 @@ type Props = {
 };
 
 export default function CommandPalette({ children }: Props) {
-  const { t } = useTranslation(['common']);
+  /* const { t } = useTranslation(['common']); */
   const router = useRouter();
   const { setTheme } = useTheme();
 
@@ -40,12 +40,12 @@ export default function CommandPalette({ children }: Props) {
     // Page section
     {
       id: 'home',
-      name: t('home'),
-      keywords: 'home homepage index 首頁',
+      name: 'homepage',
+      keywords: 'home homepage index first',
       perform: () => router.push('/'),
       icon: <HomeIcon className="h-6 w-6" />,
       section: {
-        name: t('page'),
+        name: 'page',
         priority: Priority.HIGH,
       },
     },
@@ -53,48 +53,48 @@ export default function CommandPalette({ children }: Props) {
     // - Search posts
     {
       id: 'search-posts',
-      name: t('posts'),
+      name: 'posts',
       keywords:
-        'search find posts writing words blog articles thoughts 搜尋 尋找 文章 寫作 部落格',
+        'search find posts writing words blog articles thoughts',
       icon: <MagnifyingGlassIcon className="h-6 w-6" />,
-      section: t('search'),
+      section: 'search',
     },
     // Operation section
     // - Theme toggle
     {
       id: 'theme',
-      name: t('toggle-theme'),
-      keywords: 'change toggle theme mode color 切換 更換 顏色 主題 模式',
+      name: 'toggle-theme',
+      keywords: 'change toggle theme mode color',
       icon: <LightBulbIcon className="h-6 w-6" />,
-      section: t('operation'),
+      section: 'operation',
     },
     {
       id: 'theme-light',
-      name: t('light-mode'),
-      keywords: 'theme light white mode color 顏色 主題 模式 明亮 白色',
+      name: 'light-mode',
+      keywords: 'theme light white mode color',
       perform: () => setTheme('light'),
       icon: <SunIcon className="h-6 w-6" />,
       parent: 'theme',
-      section: t('operation'),
+      section: 'operation',
     },
     {
       id: 'theme-dark',
-      name: t('dark-mode'),
-      keywords: 'theme dark black mode color 顏色 主題 模式 暗黑 黑色 深夜',
+      name: 'dark-mode',
+      keywords: 'theme dark black mode color',
       perform: () => setTheme('dark'),
       icon: <MoonIcon className="h-6 w-6" />,
       parent: 'theme',
-      section: t('operation'),
+      section: 'operation',
     },
     // - Language toggle
-    {
-      id: 'language',
-      name: t('toggle-language'),
-      keywords:
-        'change toggle locale language translation 切換 更換 語言 語系 翻譯',
-      icon: <LanguageIcon className="h-6 w-6" />,
-      section: t('operation'),
-    },
+    /* { */
+    /*   id: 'language', */
+    /*   name: t('toggle-language'), */
+    /*   keywords: */
+    /*     'change toggle locale language translation 切換 更換 語言 語系 翻譯', */
+    /*   icon: <LanguageIcon className="h-6 w-6" />, */
+    /*   section: t('operation'), */
+    /* }, */
   ];
 
   return (

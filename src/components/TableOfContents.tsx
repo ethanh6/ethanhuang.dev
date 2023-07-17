@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import GithubSlugger from 'github-slugger';
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 import { useEffect, useRef, useState } from 'react';
 
 // eslint-disable-next-line no-unused-vars
@@ -61,7 +61,7 @@ type Props = {
 };
 
 const TableOfContents = ({ source }: Props) => {
-  const { t } = useTranslation(['common']);
+  /* const { t } = useTranslation(['common']); */
 
   const headingLines = source
     .split('\n')
@@ -86,7 +86,7 @@ const TableOfContents = ({ source }: Props) => {
   return (
     <div className="mt-10">
       <p className="mb-5 text-lg font-semibold text-gray-900 transition-colors dark:text-gray-100">
-        {t('table-of-contents').toUpperCase()}
+        {'Table of Contents'}
       </p>
       <div className="flex flex-col items-start justify-start">
         {headings.map((heading, index) => {

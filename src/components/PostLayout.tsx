@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 
-import Comment from '@/components/Comment';
+/* import Comment from '@/components/Comment'; */
 import CustomLink from '@/components/CustomLink';
 import PageTitle from '@/components/PageTitle';
 import PostBody from '@/components/PostBody';
@@ -39,7 +39,7 @@ export default function PostLayout({
   } = post;
 
   const { locale } = useRouter();
-  const { t } = useTranslation(['common']);
+  /* const { t } = useTranslation(['common']); */
 
   return (
     <article>
@@ -52,7 +52,7 @@ export default function PostLayout({
 
             <dl className="space-y-10">
               <div>
-                <dt className="sr-only">{t('published-time')}</dt>
+                <dt className="sr-only">{'published-time'}</dt>
                 <dd className="text-base font-medium leading-6 text-gray-500 transition-colors dark:text-gray-400">
                   <time dateTime={date}>{formatDate(date, locale)}</time>
                 </dd>
@@ -78,14 +78,14 @@ export default function PostLayout({
         </div>
 
         <div className="divide-y divide-gray-200 pb-8 transition-colors dark:divide-gray-700">
-          <Comment />
+          {/* <Comment /> */}
 
           <footer>
             <div className="flex flex-col gap-4 pt-4 text-base font-medium sm:flex-row sm:justify-between xl:gap-8 xl:pt-8">
               {prevPost ? (
                 <div className="basis-6/12">
                   <h2 className="mb-1 text-xs uppercase tracking-wide text-gray-500 transition-colors dark:text-gray-400">
-                    {t('previous-article')}
+                    {'previous-article'}
                   </h2>
                   <CustomLink
                     href={prevPost.path}
@@ -100,7 +100,7 @@ export default function PostLayout({
               {nextPost && (
                 <div className="basis-6/12">
                   <h2 className="mb-1 text-left text-xs uppercase tracking-wide text-gray-500 transition-colors dark:text-gray-400 sm:text-right">
-                    {t('next-article')}
+                    {'next-article'}
                   </h2>
                   <CustomLink
                     href={nextPost.path}

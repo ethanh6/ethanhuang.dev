@@ -5,7 +5,7 @@ type Props = {
 };
 
 const LayoutPerPage = ({ children }: Props) => {
-  useCommandPaletteLocaleActions();
+  /* useCommandPaletteLocaleActions(); */
 
   return <>{children}</>;
 };

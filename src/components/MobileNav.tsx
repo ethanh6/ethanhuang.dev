@@ -1,11 +1,11 @@
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 import { useState } from 'react';
 
 import CustomLink from '@/components/CustomLink';
 import { headerConfigs } from '@/configs/headerConfigs';
 
 const MobileNav = () => {
-  const { t } = useTranslation(['common']);
+  /* const { t } = useTranslation(['common']); */
 
   const [navShow, setNavShow] = useState(false);
 
@@ -64,7 +64,7 @@ const MobileNav = () => {
               className="block px-12 py-4 text-2xl font-bold tracking-widest text-gray-900 transition-colors hover:bg-gray-300 dark:text-gray-100 dark:hover:bg-gray-700"
               onClick={onToggleNav}
             >
-              {t(link.title)}
+              {link.title}
             </CustomLink>
           ))}
         </nav>

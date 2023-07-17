@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+/* import { serverSideTranslations } from 'next-i18next/serverSideTranslations'; */
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 import { ParsedUrlQuery } from 'querystring';
 
@@ -14,7 +14,7 @@ import PostLayout, {
   PostForPostLayout,
   RelatedPostForPostLayout,
 } from '@/components/PostLayout';
-import { LOCALES } from '@/configs/i18nConfigs';
+/* import { LOCALES } from '@/configs/i18nConfigs'; */
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPosts, allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import { allRedirects } from '@/lib/getAllRedirects';
@@ -45,10 +45,11 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths: string[] = [];
-  LOCALES.forEach((locale) => {
-    paths.push(...allPosts.map((post) => `/${locale}${post.path}`));
-  });
+  /* const paths: string[] = []; */
+  /* LOCALES.forEach((locale) => { */
+  /*   paths.push(...allPosts.map((post) => `/${locale}${post.path}`)); */
+  /* }); */
+  const paths = allPosts.map((post) => post.path);
   return {
     paths,
     fallback: false,
@@ -59,7 +60,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
   context
 ) => {
   const { slug } = context.params!;
-  const locale = context.locale!;
+  /* const locale = context.locale!; */
 
   // Handle redirect logic
   const path = unifyPath('/posts/' + slug);
@@ -109,7 +110,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
   }
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      /* ...(await serverSideTranslations(locale, ['common'])), */
       post,
       prevPost,
       nextPost,
