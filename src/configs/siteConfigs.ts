@@ -1,12 +1,12 @@
-const fqdn = 'https://nextjs-tailwind-contentlayer-blog-starter.vercel.app';
+const fqdn = 'https://www.ethanhuang.dev';
 const logoPath = '/logo.png';
 const bannerPath = '/og-image.png';
 
 export const siteConfigs = {
   title: 'Ethan Huang',
-  titleShort: 'Next Blog',
+  titleShort: 'Blog with NextJS',
   description:
-    'Personal website with modern frontend technologies like Next.js, Tailwind CSS, Contentlayer, i18Next',
+    'Personal website with modern frontend technologies like Next.js, Tailwind CSS, Contentlayer.',
   author: 'Ethan Huang',
   credit: 'Ethan Huang',
   email: '',
