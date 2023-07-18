@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-/* import { useTranslation } from 'next-i18next'; */
 
+/* import { useTranslation } from 'next-i18next'; */
 /* import Comment from '@/components/Comment'; */
 import CustomLink from '@/components/CustomLink';
 import PageTitle from '@/components/PageTitle';
@@ -65,7 +65,7 @@ export default function PostLayout({
           className="pb-8 transition-colors lg:grid lg:grid-cols-4 lg:gap-x-6"
           style={{ gridTemplateRows: 'auto 1fr' }}
         >
-          <div className="divide-y divide-gray-200 pt-10 pb-8 transition-colors dark:divide-gray-700 lg:col-span-3">
+          <div className="divide-y divide-gray-200 pb-8 pt-10 transition-colors dark:divide-gray-700 lg:col-span-3">
             <PostBody>{children}</PostBody>
           </div>
 

@@ -9,13 +9,12 @@ import {
   PostForCommandPalette,
 } from '@/components/CommandPalette/getCommandPalettePosts';
 import { useCommandPalettePostActions } from '@/components/CommandPalette/useCommandPalettePostActions';
+import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
 import PostList, { PostForPostList } from '@/components/PostList';
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
-
-import Content from '@/components/Content';
 
 type PostForIndexPage = PostForPostList;
 import clsx from 'clsx';
@@ -66,15 +65,21 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
       />
 
       <Content>
-        <article className="prose my-12 space-y-3 transition-colors dark:prose-dark md:prose-lg md:space-y-5 prose-p:text-lg">
+        <article className="prose my-12 space-y-3 transition-colors dark:prose-dark md:prose-lg prose-p:text-lg md:space-y-5">
           <h2 className="text-right">about</h2>
           <p>Hey there, this is Ethan Huang. I'm a software engineer.</p>
-          <p>I studied Computer Science at Cornell Tech and UC San Diego. I grew up in Taipei, lived in San Diego and New York, and I'm currently based in Bay Area, California.</p>
-          <p>Programming interests me, that is, full-stack development, blockchain development and finance.</p>
+          <p>
+            I studied Computer Science at Cornell Tech and UC San Diego. I grew
+            up in Taipei, lived in San Diego and New York, and I'm currently
+            based in Bay Area, California.
+          </p>
+          <p>
+            Programming interests me, that is, full-stack development,
+            blockchain development and finance.
+          </p>
           <p>I also play basketball, listen to musics and make coffee.</p>
         </article>
       </Content>
-
     </LayoutPerPage>
   );
 };

@@ -54,8 +54,7 @@ export default function CommandPalette({ children }: Props) {
     {
       id: 'search-posts',
       name: 'posts',
-      keywords:
-        'search find posts writing words blog articles thoughts',
+      keywords: 'search find posts writing words blog articles thoughts',
       icon: <MagnifyingGlassIcon className="h-6 w-6" />,
       section: 'search',
     },
@@ -126,7 +125,7 @@ function RenderResults() {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <div className="px-4 pt-4 pb-2 font-medium text-gray-500 dark:text-gray-400">
+          <div className="px-4 pb-2 pt-4 font-medium text-gray-500 dark:text-gray-400">
             {item}
           </div>
         ) : (

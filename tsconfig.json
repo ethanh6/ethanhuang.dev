@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@image": ["public/images/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },

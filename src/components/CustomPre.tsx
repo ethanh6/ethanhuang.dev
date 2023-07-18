@@ -35,7 +35,7 @@ function CustomPre({ children, className, ...props }: Props) {
         ref={preRef}
         className={clsx(className, 'focus:outline-none')}
       >
-        <div className="absolute top-0 right-0 m-2 flex items-center rounded-md bg-[#282a36] dark:bg-[#262626]">
+        <div className="absolute right-0 top-0 m-2 flex items-center rounded-md bg-[#282a36] dark:bg-[#262626]">
           <span
             className={clsx('hidden px-2 text-xs text-green-400 ease-in', {
               'group-hover:flex': copied,

@@ -39,7 +39,7 @@ export default function PostList({ posts = [] }: Props) {
                       {title}
                     </h3>
                   </div>
-                  <div className="prose prose-sm max-w-none text-gray-500 transition-colors dark:text-gray-400 md:prose-base">
+                  <div className="prose prose-sm max-w-none text-gray-500 transition-colors md:prose-base dark:text-gray-400">
                     {description}
                   </div>
                 </div>

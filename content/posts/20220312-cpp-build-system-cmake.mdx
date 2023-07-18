@@ -10,7 +10,6 @@ language: mandarin
 
 # C++ build system - CMake
 
-
 開發 C++ 會用到很多工具，除了基本的編輯器 Text Editor 跟編譯器 Compiler，還有：
 
 - Linters
@@ -35,7 +34,7 @@ language: mandarin
 
 為了說明 Build system 的好用之處，我們先看看如果不用 build system 的話，需要的步驟會多繁瑣。
 
-Compiler 在把 source file (e.g. main.cpp) 轉換成 executable (e.g. a.out) 的過程中需要很多個步驟，但初學時通常用一個指令就足夠了，因為compiler 都會幫你處理好所有的事情。
+Compiler 在把 source file (e.g. main.cpp) 轉換成 executable (e.g. a.out) 的過程中需要很多個步驟，但初學時通常用一個指令就足夠了，因為 compiler 都會幫你處理好所有的事情。
 
 假設我們有個簡單的程式 `main.cpp`
 
@@ -117,11 +116,10 @@ Library 就是已經寫好的 code，打包好了，其他人 (包括自己) 就
 使用者在用 Library 時，會需要兩個東西：
 
 - Object file 。這是編譯好的 implementation。簡單來說就是程式的本體。
-    - 可以根據程式的本體在哪分成兩種：static library & dynamic library。
-    - 由 `*.cpp` 檔編譯而成。
+  - 可以根據程式的本體在哪分成兩種：static library & dynamic library。
+  - 由 `*.cpp` 檔編譯而成。
 - Header file。這是告訴使用者這個程式要如何使用，就是廣義的 API 概念。
-    - 就是 `*.hpp`。
-    
+  - 就是 `*.hpp`。
 
 記得 Linker 的功能嗎？
 
@@ -272,10 +270,10 @@ target_link_libraries(main greet)
 [0] $ cd <project directory>
 
 # Generates a Project Buildsystem with current dir as CMake project root dir
-[1] $ cmake -S . -B build 
+[1] $ cmake -S . -B build
 
 # builds a project, keeps cmake files in build folder
-[2] $ cmake --build build    
+[2] $ cmake --build build
 
 [3] $ make               # build using Make
 ```
@@ -313,7 +311,7 @@ target_link_libraries(main greet)
 
 # Reference
 
-[https://chchwy.github.io/2021/08/cmake-basics/](https://chchwy.github.io/2021/08/cmake-basics/) 
+[https://chchwy.github.io/2021/08/cmake-basics/](https://chchwy.github.io/2021/08/cmake-basics/)
 
 [https://cliutils.gitlab.io/modern-cmake/](https://cliutils.gitlab.io/modern-cmake/)
 

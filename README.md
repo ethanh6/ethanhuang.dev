@@ -8,8 +8,6 @@ Inspired and modified from [timlrx/tailwind-nextjs-starter-blog](https://github.
 
 [https://www.ethanhuang.dev/en](https://www.ethanhuang.dev)
 
-Or scroll down to see the [screenshots](#screenshots)
-
 ## Features
 
 - Blazing fast performance

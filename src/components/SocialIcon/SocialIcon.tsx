@@ -4,8 +4,8 @@ import Facebook from './facebook.svg';
 import Github from './github.svg';
 import Linkedin from './linkedin.svg';
 import Mail from './mail.svg';
-import Twitter from './twitter.svg';
 import Medium from './medium.svg';
+import Twitter from './twitter.svg';
 
 // Icons taken from: https://simpleicons.org/
 
@@ -45,10 +45,13 @@ const SocialIcon = ({ kind, href }: Props) => {
       <SocialSvg
         className={clsx(
           'h-6 w-6 fill-current text-gray-700 transition-colors dark:text-gray-200',
-          kind === 'mail' && 'hover:text-primary-600 dark:hover:text-primary-400',
+          kind === 'mail' &&
+            'hover:text-primary-600 dark:hover:text-primary-400',
           kind === 'github' && 'hover:text-gray-500 dark:hover:text-gray-400',
-          kind === 'facebook' && 'hover:text-[#4267B2] dark:hover:text-[#4267B2]',
-          kind === 'linkedin' && 'hover:text-[#0e76a8] dark:hover:text-[#0e76a8]',
+          kind === 'facebook' &&
+            'hover:text-[#4267B2] dark:hover:text-[#4267B2]',
+          kind === 'linkedin' &&
+            'hover:text-[#0e76a8] dark:hover:text-[#0e76a8]',
           kind === 'medium' && 'hover:text-gray-500 dark:hover:text-gray-400'
         )}
       />

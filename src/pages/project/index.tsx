@@ -9,13 +9,12 @@ import {
   PostForCommandPalette,
 } from '@/components/CommandPalette/getCommandPalettePosts';
 import { useCommandPalettePostActions } from '@/components/CommandPalette/useCommandPalettePostActions';
+import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
 import PostList, { PostForPostList } from '@/components/PostList';
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
-
-import Content from '@/components/Content';
 
 type PostForIndexPage = PostForPostList;
 
@@ -48,7 +47,6 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
-
   useCommandPalettePostActions(commandPalettePosts);
 
   return (
@@ -68,7 +66,6 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
           <h2 className="text-right">project</h2>
         </article>
       </Content>
-
     </LayoutPerPage>
   );
 };

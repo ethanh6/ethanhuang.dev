@@ -7,7 +7,7 @@ export default function CommandPaletteToggle() {
     <button
       aria-label="Toggle Command Palette"
       type="button"
-      className="hidden h-12 w-12 rounded py-3 px-4 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 sm:block"
+      className="hidden h-12 w-12 rounded px-4 py-3 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 sm:block"
       onClick={query.toggle}
     >
       <svg

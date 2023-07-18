@@ -9,13 +9,12 @@ import {
   PostForCommandPalette,
 } from '@/components/CommandPalette/getCommandPalettePosts';
 import { useCommandPalettePostActions } from '@/components/CommandPalette/useCommandPalettePostActions';
+import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
 import PostList, { PostForPostList } from '@/components/PostList';
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
-
-import Content from '@/components/Content';
 
 type PostForIndexPage = PostForPostList;
 
@@ -64,7 +63,6 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-
       <Content>
         <div className="my-4 divide-y divide-gray-200 transition-colors dark:divide-gray-700">
           <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
@@ -73,7 +71,6 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
           <PostList posts={posts} />
         </div>
       </Content>
-
     </LayoutPerPage>
   );
 };

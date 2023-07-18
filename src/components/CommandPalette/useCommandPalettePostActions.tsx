@@ -1,7 +1,7 @@
 import { useRegisterActions } from 'kbar';
 import { useRouter } from 'next/router';
-/* import { useTranslation } from 'next-i18next'; */
 
+/* import { useTranslation } from 'next-i18next'; */
 import { PostForCommandPalette } from './getCommandPalettePosts';
 
 export const useCommandPalettePostActions = (
