@@ -64,7 +64,7 @@ $ clang++ -o main main.cpp
 
 </aside>
 
-### 1. Preprocess
+### Preprocess
 
 在這個步驟會藉由 preprocessor 產生 preprocessed file (廢話)。主要做的事情是 `#include expansion`，就是把所有 `#include` 到的東西直接複製貼上到這個檔案裡面，然後會產生 translation unit。
 
@@ -74,7 +74,7 @@ $ clang++ -o main main.cpp
 $ clang++ -E main.cpp > main.ii
 ```
 
-### 2. Compilation
+### Compilation
 
 根據我們的 preprocessed file，這一步會產生很醜但還是勉強可以理解的 assembly code (`main.s`)，內容會根據使用者的系統而不同，但通常我們不會需要去看裡面的內容。
 
@@ -84,7 +84,7 @@ $ clang++ -E main.cpp > main.ii
 $ clang++ -S main.ii
 ```
 
-### 3. Assembly
+### Assembly
 
 把 assembly code 轉成 machine code，然後會產生 object file `main.o`。到這裡 `main.o` 會是一個二進位檔案，是對人類完全沒有閱讀意義的檔案。
 
@@ -92,7 +92,7 @@ $ clang++ -S main.ii
 $ clang++ -c main.s
 ```
 
-### 4. Linking
+### Linking
 
 Linker 主要的作用是，把 function declaration 連結到它的 compiled implementation，也就是 object files。
 
@@ -163,7 +163,7 @@ int main() {
 
 有了 source file，要建構 Library `greet` 需要下列幾個步驟：
 
-### 1. Compile the modules
+### Compile the modules
 
 這步驟包含了前面提到的 preprocess, compilation, assembly，會產生 greet 這個 module 的 object file `greet.o`。
 
@@ -171,7 +171,7 @@ int main() {
 $ clang++ -c greet.cpp
 ```
 
-### 2. Create libraries archive
+### Create libraries archive
 
 用打包工具 `ar` 以及參數 `rcs`，將 `greet.o` 打包成一個 library，命名為 `libgreet.a`。要注意 library 必須命名為`lib<library name>.a`，否則之後 linker 會抓不到。
 
@@ -181,7 +181,7 @@ $ clang++ -c greet.cpp
 $ ar rcs libgreet.a greet.o <other_modules_here>
 ```
 
-### 3. Compile main application
+### Compile main application
 
 像之前一樣產生 `main.cpp` 的 object file `main.o`。
 
@@ -189,7 +189,7 @@ $ ar rcs libgreet.a greet.o <other_modules_here>
 $ clang++ -c main.cpp
 ```
 
-### 4. Link main application to libraries
+### Link main application to libraries
 
 有了主要程式 `main.o` 跟 library `greet`，就可以打包成最後的 executable `main`。
 

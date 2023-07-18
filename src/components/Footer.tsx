@@ -14,7 +14,7 @@ export default function Footer() {
           <SocialIcon kind="facebook" href={footerConfigs.socialLinks.facebook} />
         </div>
         <div className="mb-8 flex space-x-2 text-sm text-gray-500 transition-colors dark:text-gray-400">
-          <div>{`© 2021 - ${new Date().getFullYear()}`}</div>
+          <div>{`© 2022 - ${new Date().getFullYear()}`}</div>
           <CustomLink href="/">{footerConfigs.credit}</CustomLink>
         </div>
       </div>

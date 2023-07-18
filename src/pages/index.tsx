@@ -15,6 +15,8 @@ import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
 
+import Content from '@/components/Content';
+
 type PostForIndexPage = PostForPostList;
 
 type Props = {
@@ -62,20 +64,18 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-      <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-        <h1 className="text-center sm:text-left">Hi, I'm Ethan.</h1>
-        <p>I'm a CS graduate at Cornell Tech.</p>
-        <p>I'm experienced with Python, C++ and Javascirpt.</p>
-        <p>I'm actively looking for job opportunities!</p>
-      </div>
-
-      <div className="my-4 divide-y divide-gray-200 transition-colors dark:divide-gray-700">
-        <div className="prose prose-lg my-8 dark:prose-dark">
-          <h2>Latest Posts</h2>
+      <Content>
+        <div className="flex flex-col justify-between">
+          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
+            <h2 className='text-left'>I build software.</h2>
+          </div>
+          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
+            <p className="text-right">I'm a CS graduate at Cornell Tech.</p>
+            <p className="text-right">I have experience with Python, C++ and Javascirpt.</p>
+            <p className="text-right">I'm actively looking for job opportunities!</p>
+          </div>
         </div>
-
-        <PostList posts={posts} />
-      </div>
+      </Content>
     </LayoutPerPage>
   );
 };

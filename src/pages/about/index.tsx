@@ -18,6 +18,7 @@ import generateRSS from '@/lib/generateRSS';
 import Content from '@/components/Content';
 
 type PostForIndexPage = PostForPostList;
+import clsx from 'clsx';
 
 type Props = {
   posts: PostForIndexPage[];
@@ -48,6 +49,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
+  /* const { t } = useTranslation(['indexPage', 'common']); */
 
   useCommandPalettePostActions(commandPalettePosts);
 
@@ -64,8 +66,12 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
       />
 
       <Content>
-        <article className="prose mx-auto my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-          <h2 className="text-right">project</h2>
+        <article className="prose my-12 space-y-3 transition-colors dark:prose-dark md:prose-lg md:space-y-5 prose-p:text-lg">
+          <h2 className="text-right">about</h2>
+          <p>Hey there, this is Ethan Huang. I'm a software engineer.</p>
+          <p>I studied Computer Science at Cornell Tech and UC San Diego. I grew up in Taipei, lived in San Diego and New York, and I'm currently based in Bay Area, California.</p>
+          <p>Programming interests me, that is, full-stack development, blockchain development and finance.</p>
+          <p>I also play basketball, listen to musics and make coffee.</p>
         </article>
       </Content>
 

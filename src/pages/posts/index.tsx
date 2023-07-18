@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
-import { useTranslation } from 'next-i18next';
+/* import { useTranslation } from 'next-i18next'; */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArticleJsonLd } from 'next-seo';
 
@@ -14,6 +14,8 @@ import PostList, { PostForPostList } from '@/components/PostList';
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
+
+import Content from '@/components/Content';
 
 type PostForIndexPage = PostForPostList;
 
@@ -46,7 +48,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
-  const { t } = useTranslation(['indexPage', 'common']);
+  /* const { t } = useTranslation(['indexPage', 'common']); */
 
   useCommandPalettePostActions(commandPalettePosts);
 
@@ -62,10 +64,15 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-      <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-        <h1 className="text-center sm:text-left">Hello, this is about.</h1>
-        <p>Something about me...</p>
-      </div>
+
+      <Content>
+        <div className="my-4 divide-y divide-gray-200 transition-colors dark:divide-gray-700">
+          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
+            <h2 className="text-right">posts</h2>
+          </div>
+          <PostList posts={posts} />
+        </div>
+      </Content>
 
     </LayoutPerPage>
   );
