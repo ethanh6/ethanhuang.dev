@@ -16,6 +16,7 @@ import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
 
 import Content from '@/components/Content';
+import Image from 'next/image'
 
 type PostForIndexPage = PostForPostList;
 
@@ -64,18 +65,18 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-      <Content>
-        <div className="flex flex-col justify-between">
-          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-            <h2 className='text-left'>I build software.</h2>
-          </div>
-          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-            <p className="text-right">I'm a CS graduate at Cornell Tech.</p>
-            <p className="text-right">I have experience with Python, C++ and Javascirpt.</p>
-            <p className="text-right">I'm actively looking for job opportunities!</p>
-          </div>
+
+      <div className="grid grid-rows-3">
+        <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5 justify-self-start">
+          <h2 className='text-left'>I build software.</h2>
         </div>
-      </Content>
+        <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5 justify-self-end">
+          <p className="text-right">I'm a CS graduate at Cornell Tech.</p>
+          <p className="text-right">I have experience with Python, C++ and Javascirpt.</p>
+          <p className="text-right">I'm actively looking for job opportunities!</p>
+        </div>
+      </div>
+
     </LayoutPerPage>
   );
 };

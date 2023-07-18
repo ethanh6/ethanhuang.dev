@@ -6,7 +6,7 @@ Inspired and modified from [timlrx/tailwind-nextjs-starter-blog](https://github.
 
 ## Demo
 
-[https://www.ethanhuang.dev/en](https://www.ethanhuang.dev/en)
+[https://www.ethanhuang.dev/en](https://www.ethanhuang.dev)
 
 Or scroll down to see the [screenshots](#screenshots)
 
