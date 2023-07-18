@@ -1,6 +1,6 @@
 const fqdn = 'https://www.ethanhuang.dev';
-const logoPath = '/logo.png';
-const bannerPath = '/og-image.png';
+const logoPath = '/images/logo.png';
+const bannerPath = '/images/og-image.png';
 
 export const siteConfigs = {
   title: 'Ethan Huang',
