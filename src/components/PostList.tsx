@@ -19,7 +19,7 @@ export default function PostList({ posts = [] }: Props) {
   const { locale } = useRouter();
 
   return (
-    <ul className="divide-y divide-gray-200 transition-colors dark:divide-gray-700">
+    <ul className="divide-gray-200 transition-colors dark:divide-gray-700">
       {!posts.length && 'No posts found.'}
       {posts.map((post) => {
         const { slug, date, title, description, path } = post;

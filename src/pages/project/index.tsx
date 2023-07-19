@@ -16,6 +16,8 @@ import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
 
+import ProjectLayout from '@/components/ProjectLayout';
+
 type PostForIndexPage = PostForPostList;
 
 type Props = {
@@ -65,6 +67,7 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         <article className="prose mx-auto my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
           <h2 className="text-right">project</h2>
         </article>
+        <ProjectLayout />
       </Content>
     </LayoutPerPage>
   );
