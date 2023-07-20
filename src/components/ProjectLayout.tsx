@@ -1,5 +1,5 @@
 import ProjectCard from '@/components/ProjectCard';
-import { ProjectData } from '@/data/projectsData';
+import { ProjectData } from '../../data/projectsData';
 // import siteMetadata from '@/data/siteMetadata';
 
 export default function ProjectLayout() {
