@@ -1,9 +1,6 @@
-import Me from '@image/me.jpg';
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
-/* import { useTranslation } from 'next-i18next'; */
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ArticleJsonLd } from 'next-seo';
 
 import {
@@ -11,46 +8,27 @@ import {
   PostForCommandPalette,
 } from '@/components/CommandPalette/getCommandPalettePosts';
 import { useCommandPalettePostActions } from '@/components/CommandPalette/useCommandPalettePostActions';
-import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
-import PostList, { PostForPostList } from '@/components/PostList';
 import { siteConfigs } from '@/configs/siteConfigs';
-import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
 
-type PostForIndexPage = PostForPostList;
+import Me from '../../public/images/me.jpg';
 
 type Props = {
-  posts: PostForIndexPage[];
   commandPalettePosts: PostForCommandPalette[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  /* const locale = context.locale!; */
-
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const commandPalettePosts = getCommandPalettePosts();
-  const posts = allPostsNewToOld.map((post) => ({
-    slug: post.slug,
-    date: post.date,
-    title: post.title,
-    description: post.description,
-    path: post.path,
-  })) as PostForIndexPage[];
-
   generateRSS();
-
   return {
     props: {
-      /* ...(await serverSideTranslations(locale, ['indexPage', 'common'])), */
-      posts,
       commandPalettePosts,
     },
   };
 };
 
-const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
-  /* const { t } = useTranslation(['indexPage', 'common']); */
-
+const Home: NextPage<Props> = ({ commandPalettePosts }) => {
   useCommandPalettePostActions(commandPalettePosts);
 
   return (
@@ -69,12 +47,12 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         <div className="prose col-span-1 my-12 py-24 transition-colors dark:prose-dark md:prose-lg">
           <h1 className="text-left">I build software.</h1>
         </div>
-        <div className="flex grid grid-rows-3 flex-col justify-end">
+        <div className="grid grid-rows-3 justify-end">
           <div className="row-start-2 justify-self-end">
-            <Image src="/images/me.jpg" height={168} width={140} alt="me" />
+            <Image src={Me} height={168} width={140} alt="me" />
           </div>
-          <div className="prose-p:text-1xl prose row-start-3 my-9 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-4">
-            <p className="text-right"> I'm a software engineer.</p>
+          <div className="prose row-start-3 my-9 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-4">
+            <p className="text-right"> I'm a software engineer. </p>
             <p className="text-right">
               {' '}
               I have experience with Python, C++ and Typescript.{' '}

@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image';
 
-import CryptoArbImg from '../../public/images/projects/CryptoArbImage.png';
+import CryptoArbImg from '../public/images/projects/CryptoArbImage.png';
+import MetaMaskImg from '../public/images/projects/MetaMask.png';
 
 export type ProjectType = {
   title: string;
@@ -30,6 +31,20 @@ export const ProjectData: Array<ProjectType> = [
     image: {
       src: CryptoArbImg,
       alt: 'crypto image',
+      placeholder: 'blur',
+    },
+  },
+  {
+    title: 'MetaMask Integration',
+    description: 'I integrate metamask in my website!',
+    links: {
+      post: '/posts',
+      github: 'https://github.com/ethanh6',
+      site: 'https://github.com/ethanh6',
+    },
+    image: {
+      src: MetaMaskImg,
+      alt: 'metamask image',
       placeholder: 'blur',
     },
   },
