@@ -74,10 +74,10 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
             <Image src="/images/me.jpg" height={168} width={140} alt="me" />
           </div>
           <div className="prose-p:text-1xl prose row-start-3 my-9 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-4">
-            <p className="text-right"> I'm a CS graduate at Cornell Tech. </p>
+            <p className="text-right"> I'm a software engineer.</p>
             <p className="text-right">
               {' '}
-              I have experience with Python, C++ and Javascirpt.{' '}
+              I have experience with Python, C++ and Typescript.{' '}
             </p>
             <p className="text-right">
               {' '}

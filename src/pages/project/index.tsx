@@ -12,11 +12,10 @@ import { useCommandPalettePostActions } from '@/components/CommandPalette/useCom
 import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
 import PostList, { PostForPostList } from '@/components/PostList';
+import ProjectLayout from '@/components/ProjectLayout';
 import { siteConfigs } from '@/configs/siteConfigs';
 import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
-
-import ProjectLayout from '@/components/ProjectLayout';
 
 type PostForIndexPage = PostForPostList;
 
@@ -64,7 +63,7 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
       />
 
       <Content>
-        <article className="prose mx-auto my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
+        <article className="prose mx-auto my-8 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
           <h2 className="text-right">project</h2>
         </article>
         <ProjectLayout />

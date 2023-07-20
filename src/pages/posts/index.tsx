@@ -65,7 +65,7 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
 
       <Content>
         <div className="my-4 transition-colors">
-          <div className="prose my-12 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
+          <div className="prose my-8 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
             <h2 className="text-right">posts</h2>
           </div>
           <PostList posts={posts} />
