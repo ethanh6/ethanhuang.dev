@@ -62,10 +62,7 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-      <Content>
-        <article className="prose mx-auto my-8 space-y-2 transition-colors dark:prose-dark md:prose-lg md:space-y-5">
-          <h2 className="text-right">project</h2>
-        </article>
+      <Content title={'project'}>
         <ProjectLayout />
       </Content>
     </LayoutPerPage>

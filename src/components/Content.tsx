@@ -1,17 +1,19 @@
 import React from 'react';
 
 type ContentProps = {
+  title: string;
   children?: React.ReactNode;
-  title?: string;
 };
 
-const Content: React.FC<ContentProps> = ({
-  title = 'Ethan Huang',
-  children,
-}) => {
+const Content: React.FC<ContentProps> = ({ title, children }: ContentProps) => {
   return (
-    <div className="grid grid-cols-6 pt-3">
-      <div className="col-span-4 col-start-2">{children}</div>
+    <div className="flex justify-center">
+      <div className="w-5/6">
+        <article className="prose my-8 space-y-3 transition-colors dark:prose-dark md:prose-lg prose-p:text-lg md:space-y-5">
+          <h2 className="text-right">{title}</h2>
+        </article>
+        {children}
+      </div>
     </div>
   );
 };

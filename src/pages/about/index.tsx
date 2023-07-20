@@ -64,13 +64,12 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
         description={siteConfigs.description}
       />
 
-      <Content>
+      <Content title={'about'}>
         <article className="prose my-8 space-y-3 transition-colors dark:prose-dark md:prose-lg prose-p:text-lg md:space-y-5">
-          <h2 className="text-right">about</h2>
           <h4> Hey there! </h4>
-          <p>I'm Ethan Huang. Welcome to my personal website.</p>
+          <p> I'm Ethan Huang. Welcome to my personal website.</p>
           <p>
-            I recently graduated from Cornell Tech with a master's degree in
+            I recently graduated from Cornell Tech with a master&apos;s degree in
             Computer Science. I also studied CS at UC San Diego during my
             undergrad.
           </p>
