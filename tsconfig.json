@@ -26,6 +26,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated"
-  ],
+, "src/lib/contentLayerAdapter.js"  ],
   "exclude": ["node_modules"]
 }

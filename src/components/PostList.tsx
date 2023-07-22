@@ -4,11 +4,11 @@ import CustomLink from '@/components/CustomLink';
 import formatDate from '@/lib/formatDate';
 
 export interface PostForPostList {
-  slug: string;
   date: string;
-  title: string;
   description: string;
   path: string;
+  slug: string;
+  title: string;
 }
 
 type Props = {

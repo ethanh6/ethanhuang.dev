@@ -78,8 +78,6 @@ export default function PostLayout({
         </div>
 
         <div className="divide-y divide-gray-200 pb-8 transition-colors dark:divide-gray-700">
-          {/* <Comment /> */}
-
           <footer>
             <div className="flex flex-col gap-4 pt-4 text-base font-medium sm:flex-row sm:justify-between xl:gap-8 xl:pt-8">
               {prevPost ? (

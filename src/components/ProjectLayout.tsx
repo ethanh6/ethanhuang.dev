@@ -1,13 +1,16 @@
 import ProjectCard from '@/components/ProjectCard';
-import { ProjectData } from '../../data/projectsData';
-// import siteMetadata from '@/data/siteMetadata';
+import { Project } from '@/lib/contentLayerAdapter';
 
-export default function ProjectLayout() {
+type Props = {
+  projects: Project[];
+};
+
+export default function ProjectLayout({ projects = [] }: Props) {
   return (
     <div className="divide-y divide-gray-200 transition-colors dark:divide-gray-700">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-        {ProjectData.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+        {projects.map((proj) => (
+          <ProjectCard key={proj.slug} project={proj} />
         ))}
       </div>
     </div>

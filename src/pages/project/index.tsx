@@ -9,40 +9,40 @@ import {
 import { useCommandPalettePostActions } from '@/components/CommandPalette/useCommandPalettePostActions';
 import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
-import PostList, { PostForPostList } from '@/components/PostList';
 import ProjectLayout from '@/components/ProjectLayout';
 import { siteConfigs } from '@/configs/siteConfigs';
-import { allPostsNewToOld } from '@/lib/contentLayerAdapter';
+import { allProjects, Project } from '@/lib/contentLayerAdapter';
 import generateRSS from '@/lib/generateRSS';
 
-type PostForIndexPage = PostForPostList;
+export type ProjectTypeForIndexPage = {
+  date: string;
+  description: string;
+  path: string;
+  slug: string;
+  title: string;
+  imgAlt: string;
+  imgSrc: string;
+};
 
 type Props = {
-  posts: PostForIndexPage[];
+  projects: Project[];
   commandPalettePosts: PostForCommandPalette[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = () => {
   const commandPalettePosts = getCommandPalettePosts();
-  const posts = allPostsNewToOld.map((post) => ({
-    slug: post.slug,
-    date: post.date,
-    title: post.title,
-    description: post.description,
-    path: post.path,
-  })) as PostForIndexPage[];
-
+  const projects = allProjects;
   generateRSS();
 
   return {
     props: {
-      posts,
+      projects,
       commandPalettePosts,
     },
   };
 };
 
-const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
+const Home: NextPage<Props> = ({ projects, commandPalettePosts }) => {
   useCommandPalettePostActions(commandPalettePosts);
 
   return (
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ posts, commandPalettePosts }) => {
       />
 
       <Content title={'project'}>
-        <ProjectLayout />
+        <ProjectLayout projects={projects} />
       </Content>
     </LayoutPerPage>
   );

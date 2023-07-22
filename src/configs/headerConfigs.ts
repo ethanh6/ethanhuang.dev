@@ -4,6 +4,6 @@ export const headerConfigs = {
     { href: '/', title: 'home' },
     { href: '/about', title: 'about' },
     { href: '/project', title: 'project' },
-    { href: '/posts', title: 'posts' },
+    { href: '/post', title: 'post' },
   ],
 };

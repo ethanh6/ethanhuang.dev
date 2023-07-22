@@ -21,7 +21,7 @@ type Props = {
   commandPalettePosts: PostForCommandPalette[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = () => {
   const commandPalettePosts = getCommandPalettePosts();
   const posts = allPostsNewToOld.map((post) => ({
     slug: post.slug,
