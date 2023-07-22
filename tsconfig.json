@@ -25,7 +25,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".contentlayer/generated"
-, "src/lib/contentLayerAdapter.js"  ],
+    ".contentlayer/generated" ,
+    "src/lib/contentLayerAdapter.ts"  ],
   "exclude": ["node_modules"]
 }
