@@ -2,8 +2,6 @@
 
 My blog with modern frontend tech stack like Next.js, Tailwind CSS and Contentlayer.
 
-Inspired by [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
-
 ## Demo
 
 [https://www.ethanhuang.dev](https://www.ethanhuang.dev)
