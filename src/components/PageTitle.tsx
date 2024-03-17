@@ -4,7 +4,7 @@ type Props = {
 
 export default function PageTitle({ children }: Props) {
   return (
-    <h1 className="font-extrabold leading-9 tracking-tight text-gray-900 transition-colors dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
+    <h1 className="md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 transition-colors dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl">
       {children}
     </h1>
   );

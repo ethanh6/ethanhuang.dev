@@ -55,7 +55,7 @@ function CustomPre({ children, className, ...props }: Props) {
                 'border-green-400': copied,
                 'border-gray-600 hover:border-gray-400 focus:ring-4 focus:ring-gray-200/50 dark:border-gray-700 dark:hover:border-gray-400':
                   !copied,
-              }
+              },
             )}
           >
             <svg

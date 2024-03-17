@@ -35,7 +35,7 @@ const useIntersectionObserver: UseIntersectionObserverType = (setActiveId) => {
         setActiveId(visibleHeadings[0].target.id);
       } else if (visibleHeadings.length > 1) {
         const sortedVisibleHeadings = visibleHeadings.sort(
-          (a, b) => getIndexFromId(b.target.id) - getIndexFromId(a.target.id)
+          (a, b) => getIndexFromId(b.target.id) - getIndexFromId(a.target.id),
         );
 
         setActiveId(sortedVisibleHeadings[0].target.id);
@@ -47,7 +47,7 @@ const useIntersectionObserver: UseIntersectionObserverType = (setActiveId) => {
     });
 
     const headingElements = Array.from(
-      document.querySelectorAll('article h2,h3')
+      document.querySelectorAll('article h2,h3'),
     );
 
     headingElements.forEach((element) => observer.observe(element));
@@ -96,10 +96,10 @@ const TableOfContents = ({ source }: Props) => {
               type="button"
               className={clsx(
                 heading.id === activeId
-                  ? 'font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
+                  ? 'text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium'
                   : 'font-normal text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200',
                 heading.level === 3 && 'pl-4',
-                'mb-3 text-left text-sm transition-colors hover:underline'
+                'mb-3 text-left text-sm transition-colors hover:underline',
               )}
               onClick={(e) => {
                 e.preventDefault();

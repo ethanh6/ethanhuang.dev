@@ -8,29 +8,21 @@ const CustomLink = ({ href, children, ...rest }: Props) => {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
-  if (isInternalLink) {
+  if (isInternalLink || isAnchorLink) {
     return (
-      <Link href={href}>
-        <a {...rest}>{children}</a>
+      <Link {...rest} href={href}>
+        {children}
       </Link>
     );
   }
 
-  if (isAnchorLink) {
-    return (
-      <a href={href} {...rest}>
-        {children}
-      </a>
-    );
-  }
-
   return (
-    <a target="_blank" rel="noopener noreferrer" href={href} {...rest}>
+    <Link target="_blank" rel="noopener noreferrer" href={href!} {...rest}>
       {children}
       {typeof children === 'string' && (
         <ExternalLinkIcon className="ml-1 inline-block h-4 w-4" />
       )}
-    </a>
+    </Link>
   );
 };
 

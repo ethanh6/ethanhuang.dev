@@ -1,7 +1,7 @@
-const formatDate = (date: string, locale = 'en') => {
+const formatDate = (date: string, locale = 'en-US') => {
   const now = new Date(date).toLocaleDateString(locale, {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   });
 

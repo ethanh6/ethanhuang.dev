@@ -1,47 +1,27 @@
-import { useRouter } from 'next/router';
-
 import CustomLink from '@/components/CustomLink';
 import formatDate from '@/lib/formatDate';
 
-export interface PostForPostList {
-  date: string;
-  description: string;
-  path: string;
-  slug: string;
-  title: string;
-}
-
-type Props = {
-  posts: PostForPostList[];
-};
-
-export default function PostList({ posts = [] }: Props) {
-  const { locale } = useRouter();
-
+export default function PostList({ posts }: { posts: ContentData[] }) {
   return (
     <ul className="divide-gray-200 transition-colors dark:divide-gray-700">
       {!posts.length && 'No posts found.'}
-      {posts.map((post) => {
-        const { slug, date, title, description, path } = post;
+      {posts.map((post, i) => {
+        const { content, data } = post as {
+          content: string;
+          data: PostType;
+        };
+
         return (
-          <li key={slug} className="group transition-colors">
-            <CustomLink href={path}>
+          <li key={i} className="group transition-colors">
+            <CustomLink href={`/post/${data.slug}`}>
               <article className="space-y-2 rounded-xl p-4 transition-colors group-hover:bg-gray-100 dark:group-hover:bg-gray-800 xl:grid xl:grid-cols-4  xl:items-baseline xl:space-y-0">
-                <dl>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-sm font-medium leading-6 text-gray-500 transition-colors dark:text-gray-400 md:text-base">
-                    <time dateTime={date}>{formatDate(date, locale)}</time>
-                  </dd>
-                </dl>
+                <div className="text-sm font-medium leading-6 text-gray-500 transition-colors dark:text-gray-400 md:text-base">
+                  {formatDate(data.date)}
+                </div>
                 <div className="space-y-3 xl:col-span-3">
-                  <div>
-                    <h3 className="text-lg font-bold tracking-tight text-gray-900 transition-colors dark:text-gray-100 sm:text-xl md:text-2xl">
-                      {title}
-                    </h3>
-                  </div>
-                  <div className="prose prose-sm max-w-none text-gray-500 transition-colors md:prose-base dark:text-gray-400">
-                    {description}
-                  </div>
+                  <h3 className="text-lg font-bold tracking-tight text-gray-900 transition-colors dark:text-gray-100 sm:text-xl md:text-2xl">
+                    {data.title}
+                  </h3>
                 </div>
               </article>
             </CustomLink>

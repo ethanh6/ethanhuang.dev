@@ -1,45 +1,26 @@
-import { useRouter } from 'next/router';
-
-/* import { useTranslation } from 'next-i18next'; */
-/* import Comment from '@/components/Comment'; */
 import CustomLink from '@/components/CustomLink';
 import PageTitle from '@/components/PageTitle';
-import PostBody from '@/components/PostBody';
-import TableOfContents from '@/components/TableOfContents';
 import formatDate from '@/lib/formatDate';
 
-export interface PostForPostLayout {
-  date: string;
-  title: string;
-  body: { raw: string };
-}
-
-export type RelatedPostForPostLayout = {
-  title: string;
-  path: string;
-} | null;
-
-type Props = {
-  post: PostForPostLayout;
-  nextPost: RelatedPostForPostLayout;
-  prevPost: RelatedPostForPostLayout;
-  children: React.ReactNode;
-};
+import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export default function PostLayout({
   post,
   nextPost,
   prevPost,
-  children,
-}: Props) {
+  type,
+}: {
+  post: ContentData;
+  nextPost: ContentData | null;
+  prevPost: ContentData | null;
+  type: ContentType;
+}) {
   const {
-    date,
-    title,
-    body: { raw },
+    content,
+    data: { title, description, date, slug },
   } = post;
 
-  const { locale } = useRouter();
-  /* const { t } = useTranslation(['common']); */
+  const dateStr = formatDate(date);
 
   return (
     <article>
@@ -50,31 +31,15 @@ export default function PostLayout({
               <PageTitle>{title}</PageTitle>
             </div>
 
-            <dl className="space-y-10">
-              <div>
-                <dt className="sr-only">{'published-time'}</dt>
-                <dd className="text-base font-medium leading-6 text-gray-500 transition-colors dark:text-gray-400">
-                  <time dateTime={date}>{formatDate(date, locale)}</time>
-                </dd>
-              </div>
-            </dl>
+            <div className="text-base font-medium leading-6 text-gray-500 transition-colors dark:text-gray-400">
+              <div>{description}</div>
+              <div>{dateStr}</div>
+            </div>
           </div>
         </header>
 
-        <div
-          className="pb-8 transition-colors lg:grid lg:grid-cols-4 lg:gap-x-6"
-          style={{ gridTemplateRows: 'auto 1fr' }}
-        >
-          <div className="divide-y divide-gray-200 pb-8 pt-10 transition-colors dark:divide-gray-700 lg:col-span-3">
-            <PostBody>{children}</PostBody>
-          </div>
-
-          {/* DESKTOP TABLE OF CONTENTS */}
-          <aside>
-            <div className="hidden lg:sticky lg:top-24 lg:col-span-1 lg:block">
-              <TableOfContents source={raw} />
-            </div>
-          </aside>
+        <div className="divide-y divide-gray-200 pb-8 pt-10 transition-colors dark:divide-gray-700 lg:col-span-3">
+          <MDXRemote source={content} />
         </div>
 
         <div className="divide-y divide-gray-200 pb-8 transition-colors dark:divide-gray-700">
@@ -86,25 +51,26 @@ export default function PostLayout({
                     {'previous-article'}
                   </h2>
                   <CustomLink
-                    href={prevPost.path}
-                    className="text-primary-500 transition-colors hover:text-primary-600 dark:hover:text-primary-400"
+                    href={`/${type}/${prevPost.data.slug}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
-                    &larr; {prevPost.title}
+                    &larr; {prevPost.data.title}
                   </CustomLink>
                 </div>
               ) : (
                 <div />
               )}
+
               {nextPost && (
                 <div className="basis-6/12">
                   <h2 className="mb-1 text-left text-xs uppercase tracking-wide text-gray-500 transition-colors dark:text-gray-400 sm:text-right">
                     {'next-article'}
                   </h2>
                   <CustomLink
-                    href={nextPost.path}
-                    className="block text-primary-500 transition-colors hover:text-primary-600 dark:hover:text-primary-400 sm:text-right"
+                    href={`/${type}/${nextPost.data.slug}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 block transition-colors sm:text-right"
                   >
-                    {nextPost.title} &rarr;
+                    {nextPost.data.title} &rarr;
                   </CustomLink>
                 </div>
               )}
