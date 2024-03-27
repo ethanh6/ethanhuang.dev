@@ -1,12 +1,12 @@
----
-title: C++ Build System - CMake
-description: Process of compiling a C++ project and CMake.
-slug: cpp-build-system-cmake
-date: 2023-03-12
-type: Post
-language: mandarin
-tags: Build System, C++, CMake
----
+export const metadata = {
+  title: 'C++ Build System - CMake',
+  description: 'Process of compiling a C++ project and CMake.',
+  slug: 'cpp-build-system-cmake',
+  date: '2023-03-12',
+  type: 'Post',
+  language: 'mandarin',
+  tags: 'Build System, C++, CMake',
+};
 
 # C++ build system - CMake
 
@@ -54,18 +54,17 @@ $ clang++ -o main main.cpp
 
 但在背後，clang++，以及所有其他的 compiler，都幫你做了這些事情：
 
-<aside>
-💡 Source file (`main.cpp`)
-→ [ Preprocessor ] → preprocessed file (`main.ii`)
-→ [ Compiler ] → assembly file (`main.s`) 
-→ [ Assembler ] → object file (`main.o`)
-→ [ Linker ] (with some libraries if needed) → executable (`a.out` or `main`)
-
-</aside>
+<pre>
+  💡 Source file (`main.cpp`)
+  → [ Preprocessor ] → preprocessed file (`main.ii`)
+  → [ Compiler ] → assembly file (`main.s`) 
+  → [ Assembler ] → object file (`main.o`)
+  → [ Linker ] (with some libraries if needed) → executable (`a.out` or `main`)
+</pre>
 
 ### Preprocess
 
-在這個步驟會藉由 preprocessor 產生 preprocessed file (廢話)。主要做的事情是 `#include expansion`，就是把所有 `#include` 到的東西直接複製貼上到這個檔案裡面，然後會產生 translation unit。
+在這個步驟會藉由 preprocessor 產生 preprocessed file。主要做的事情是 "#include expansion"，就是把所有 `#include` 到的東西直接複製貼上到這個檔案裡面，然後會產生 translation unit。
 
 要注意的是，我們需要把輸出寫道 `main.ii` 裡面，方便我們看之後的過程。
 

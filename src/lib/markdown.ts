@@ -1,24 +1,42 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import matter from 'gray-matter';
 
-function readContent({ type }: { type: ContentType }): ContentData[] {
-  const dir_path: string = path.join(process.cwd(), 'public', 'content', type);
+async function getMDXData(content_type: ContentType) {
+  // get slugs
+  const content_path = path.join(
+    process.cwd(),
+    `src/app/${content_type === 'Post' ? 'post' : 'project'}/(content)`,
+  );
 
-  const files: string[] = fs.readdirSync(dir_path);
+  const slugs = fs
+    .readdirSync(content_path, { withFileTypes: true })
+    .filter((d) => d.isDirectory());
 
-  const parsed_content = files.map((filename) => {
-    const markdown = fs.readFileSync(path.join(dir_path, filename), {
-      encoding: 'utf-8',
-      flag: 'r',
-    });
+  // Retrieve metadata from MDX files, filter by content type
+  const mdxFiles = await Promise.all(
+    slugs.map(async ({ name }) => {
+      const mdxModule = await import(
+        `../app/${content_type === 'Post' ? 'post' : 'project'}/(content)/${name}/page.mdx`
+      );
+      const metadata = await mdxModule.metadata;
+      return {
+        slug: name,
+        ...metadata,
+      };
+    }),
+  );
 
-    const { content, data } = matter(markdown);
-
-    return { content, data };
-  });
-
-  return parsed_content as ContentData[];
+  return mdxFiles
+    .filter((mdx) => mdx.type === content_type)
+    .sort((a, b) => +new Date(b.date) - +new Date(a.date));
 }
 
-export default readContent;
+export async function getPosts() {
+  const posts = await getMDXData('Post');
+  return posts;
+}
+
+export async function getProjects() {
+  const projects = getMDXData('Project');
+  return projects;
+}

@@ -1,3 +1,4 @@
+'use client';
 // ref: https://philstainer.io/blog/copy-code-button-markdown
 
 import clsx from 'clsx';

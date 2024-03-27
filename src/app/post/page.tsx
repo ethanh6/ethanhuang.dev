@@ -1,22 +1,16 @@
-import type { NextPage } from 'next';
-import { GetStaticProps } from 'next';
-
 import Content from '@/components/Content';
 import LayoutPerPage from '@/components/LayoutPerPage';
-import PostList, { PostForPostList } from '@/components/PostList';
-import { siteConfigs } from '@/configs/siteConfigs';
+import PostList from '@/components/PostList';
 
-import readContent from '@/lib/markdown';
+import { getPosts } from '@/lib/markdown';
 
-const Home = () => {
-  const posts_content: ContentData[] = readContent({ type: 'post' });
+const Home = async () => {
+  const posts = await getPosts();
 
   return (
-    <LayoutPerPage>
-      <Content title={'post'}>
-        <PostList posts={posts_content} />
-      </Content>
-    </LayoutPerPage>
+    <Content title={'post'}>
+      <PostList posts={posts} />
+    </Content>
   );
 };
 

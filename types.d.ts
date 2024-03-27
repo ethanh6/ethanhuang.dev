@@ -1,23 +1,19 @@
-type ProjectType = {
+type ContentType = 'Post' | 'Project';
+
+type ContentMetadataType = {
   title: string;
   description: string;
-  imgSrc: string;
-  imgAlt: string;
   date: string;
   slug: string;
+  type: ContentType;
+  imgSrc?: string;
+  imgAlt?: string;
+  tags?: string;
 };
 
-type ContentData = {
+type ParsedContentType = {
+  metadata: ContentMetadataType;
   content: string;
-  data: ProjectType | PostType;
 };
 
-type ContentType = 'post' | 'project';
-
-type PostType = {
-  title: string;
-  description: string;
-  date: string;
-  slug: string;
-  tags: string[];
-};
+type Nullable<T> = T | null;

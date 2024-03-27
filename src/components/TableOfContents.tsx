@@ -1,7 +1,8 @@
+'use client';
 // ref: https://github.com/ekomenyong/kommy-mdx/blob/main/src/components/TOC.tsx
 
 import clsx from 'clsx';
-import GithubSlugger from 'github-slugger';
+// import GithubSlugger from 'github-slugger';
 /* import { useTranslation } from 'next-i18next'; */
 import { useEffect, useRef, useState } from 'react';
 
