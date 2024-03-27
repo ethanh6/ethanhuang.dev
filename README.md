@@ -21,7 +21,7 @@ My blog with modern frontend tech stack like Next.js, Tailwind CSS and Contentla
 ## Tech stack
 
 - [Next.js](https://nextjs.org/): React framework
-- [Contentlayer](https://github.com/contentlayerdev/contentlayer): MDX processor
+- [MDX](Contentlayer): Markdown
 - [Tailwind CSS](https://tailwindcss.com/): CSS framework
 - [next-seo](https://github.com/garmeeh/next-seo#news-article): SEO meta tags
 - [kbar](https://github.com/timc1/kbar): command palette

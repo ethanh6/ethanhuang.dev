@@ -7,8 +7,6 @@ import Mail from './mail.svg';
 import Medium from './medium.svg';
 import Twitter from './twitter.svg';
 
-// Icons taken from: https://simpleicons.org/
-
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
 const components: { [key: string]: SVGComponent } = {
@@ -25,13 +23,6 @@ type Props = {
 };
 
 const SocialIcon = ({ kind, href }: Props) => {
-  /* if ( */
-  /*   !href || */
-  /*   (kind === 'mail' && */
-  /*     !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href)) */
-  /* ) */
-  /*   return null; */
-
   const SocialSvg = components[kind];
 
   return (
@@ -52,7 +43,7 @@ const SocialIcon = ({ kind, href }: Props) => {
             'hover:text-[#4267B2] dark:hover:text-[#4267B2]',
           kind === 'linkedin' &&
             'hover:text-[#0e76a8] dark:hover:text-[#0e76a8]',
-          kind === 'medium' && 'hover:text-gray-500 dark:hover:text-gray-400'
+          kind === 'medium' && 'hover:text-gray-500 dark:hover:text-gray-400',
         )}
       />
     </a>
