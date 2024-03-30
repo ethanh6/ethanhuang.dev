@@ -8,7 +8,7 @@ const Home = async () => {
   const projects = await getProjects();
 
   return (
-    <Content title={'project'}>
+    <Content>
       <ProjectLayout projects={projects} />
     </Content>
   );

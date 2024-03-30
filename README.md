@@ -1,10 +1,6 @@
 # My Blog
 
-My blog with modern frontend tech stack like Next.js, Tailwind CSS and Contentlayer.
-
-## Demo
-
-[https://www.ethanhuang.dev](https://www.ethanhuang.dev)
+My blog with modern frontend tech stack like Next.js, Tailwind CSS and MDX.
 
 ## Features
 

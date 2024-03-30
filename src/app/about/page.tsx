@@ -9,7 +9,7 @@ type Props = {};
 
 const Home: NextPage<Props> = () => {
   return (
-    <Content title={'about'}>
+    <Content>
       <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
         <h4> Hey there! </h4>
         <p> I'm Ethan Huang. Welcome to my personal website.</p>

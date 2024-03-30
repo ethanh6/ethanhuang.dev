@@ -8,7 +8,7 @@ const Home = async () => {
   const posts = await getPosts();
 
   return (
-    <Content title={'post'}>
+    <Content>
       <PostList posts={posts} />
     </Content>
   );
