@@ -1,5 +1,3 @@
-import Content from '@/components/Content';
-import LayoutPerPage from '@/components/LayoutPerPage';
 import PostList from '@/components/PostList';
 
 import { getPosts } from '@/lib/markdown';

@@ -20,7 +20,7 @@ async function getMDXData(content_type: ContentType) {
       );
       const metadata = await mdxModule.metadata;
       return {
-        slug: name,
+        // slug: name,
         ...metadata,
       };
     }),

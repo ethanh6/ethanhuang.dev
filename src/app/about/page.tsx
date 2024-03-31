@@ -1,8 +1,5 @@
 import type { NextPage } from 'next';
 import { ArticleJsonLd } from 'next-seo';
-
-import Content from '@/components/Content';
-import LayoutPerPage from '@/components/LayoutPerPage';
 import { siteConfigs } from '@/configs/siteConfigs';
 
 type Props = {};
