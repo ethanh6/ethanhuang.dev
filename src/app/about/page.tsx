@@ -1,6 +1,10 @@
-import type { NextPage } from 'next';
+import type { NextPage, Metadata } from 'next';
 import { ArticleJsonLd } from 'next-seo';
 import { siteConfigs } from '@/configs/siteConfigs';
+
+export const metadata: Metadata = {
+  title: 'About',
+};
 
 type Props = {};
 

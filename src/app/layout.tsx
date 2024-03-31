@@ -14,7 +14,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Ethan Huang',
+  title: {
+    template: '%s | Ethan Huang',
+    default: 'Ethan Huang',
+  },
   description: 'My personal website.',
 };
 
