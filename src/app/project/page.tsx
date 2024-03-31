@@ -7,11 +7,7 @@ import { getProjects } from '@/lib/markdown';
 const Home = async () => {
   const projects = await getProjects();
 
-  return (
-    <Content>
-      <ProjectLayout projects={projects} />
-    </Content>
-  );
+  return <ProjectLayout projects={projects} />;
 };
 
 export default Home;

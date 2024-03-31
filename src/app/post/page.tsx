@@ -7,11 +7,7 @@ import { getPosts } from '@/lib/markdown';
 const Home = async () => {
   const posts = await getPosts();
 
-  return (
-    <Content>
-      <PostList posts={posts} />
-    </Content>
-  );
+  return <PostList posts={posts} />;
 };
 
 export default Home;
