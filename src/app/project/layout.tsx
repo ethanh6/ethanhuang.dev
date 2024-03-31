@@ -1,14 +1,7 @@
-import LayoutPerPage from '@/components/LayoutPerPage';
-import Content from '@/components/Content';
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <LayoutPerPage>
-      <Content title={''}>
-        <div className="prose prose-quoteless prose-neutral dark:prose-invert transition-colors dark:divide-gray-700">
-          {children}
-        </div>
-      </Content>
-    </LayoutPerPage>
+    <div className="">
+      {children}
+    </div>
   );
 }

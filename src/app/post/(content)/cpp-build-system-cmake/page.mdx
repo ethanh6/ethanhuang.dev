@@ -55,11 +55,10 @@ $ clang++ -o main main.cpp
 但在背後，clang++，以及所有其他的 compiler，都幫你做了這些事情：
 
 <pre>
-  💡 Source file (`main.cpp`)
-  → [ Preprocessor ] → preprocessed file (`main.ii`)
-  → [ Compiler ] → assembly file (`main.s`) 
-  → [ Assembler ] → object file (`main.o`)
-  → [ Linker ] (with some libraries if needed) → executable (`a.out` or `main`)
+  💡 Source file (`main.cpp`) → [ Preprocessor ] → preprocessed file (`main.ii`)
+  → [ Compiler ] → assembly file (`main.s`) → [ Assembler ] → object file
+  (`main.o`) → [ Linker ] (with some libraries if needed) → executable (`a.out`
+  or `main`)
 </pre>
 
 ### Preprocess

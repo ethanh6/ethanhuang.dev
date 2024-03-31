@@ -1,4 +1,3 @@
-import Content from '@/components/Content';
 import ProjectLayout from '@/components/ProjectLayout';
 // import { siteConfigs } from '@/configs/siteConfigs';
 
@@ -6,12 +5,9 @@ import { getProjects } from '@/lib/markdown';
 
 const Home = async () => {
   const projects = await getProjects();
+  projects.sort((a, b) => a.order - b.order);
 
-  return (
-    <Content title={'project'}>
-      <ProjectLayout projects={projects} />
-    </Content>
-  );
+  return <ProjectLayout projects={projects} />;
 };
 
 export default Home;
