@@ -11,7 +11,7 @@ export default function ProjectCard({ project }) {
           'overflow-hidden rounded-md border-2 border-gray-300/60 transition-colors dark:border-gray-700/60'
         }
       >
-        {imgSrc !== "" && (
+        {imgSrc !== '' && (
           <CustomLink
             href={`/project/${slug}`}
             aria-label={`Link to ${title}`}
@@ -30,7 +30,7 @@ export default function ProjectCard({ project }) {
             />
           </CustomLink>
         )}
-        <div className="flex flex-col p-8 gap-2">
+        <div className="flex flex-col gap-2 p-8">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
             <CustomLink
               href={`/project/${slug}`}

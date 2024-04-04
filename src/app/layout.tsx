@@ -34,6 +34,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
+          enableColorScheme={true}
         >
           <div className="h-full w-3/5 flex-1">
             <div className="container mx-auto h-full px-6 antialiased sm:px-6 md:max-w-3xl lg:max-w-5xl">
