@@ -26,7 +26,7 @@ export function ThemeSwitch() {
     <Button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="h-10 w-10 p-2 transition-all sm:h-12 sm:w-12 sm:p-3"
+      className="h-10 w-10 p-2 transition-all hidden md:block"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
       {mounted && isDark ? (
