@@ -39,7 +39,7 @@ export default function RootLayout({
           <div className="h-full w-11/12 md:w-3/5 flex-1">
             <div className="container mx-auto min-w-full h-full px-6 antialiased">
               <Header />
-              <div className="mx-auto overflow-auto px-6 w-full">{children}</div>
+              <div className="mx-auto overflow-auto px-4 w-full">{children}</div>
             </div>
           </div>
           <Footer />
