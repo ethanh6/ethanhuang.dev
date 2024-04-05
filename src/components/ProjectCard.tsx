@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import CustomLink from '@/components/CustomLink';
-
+//
 export default function ProjectCard({ project }) {
   const { title, description, imgSrc, imgAlt, date, slug } = project;
 
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }) {
               src={imgSrc}
               width={400}
               height={300}
-              className="bg-gray-300 object-cover object-center dark:bg-gray-700"
+              className="z-0 bg-gray-300 object-cover object-center dark:bg-gray-700"
               quality="30"
               style={{
                 objectFit: 'cover',
