@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "pretty-quick": "npx pretty-quick",
-    "prettier": "npx prettier . --write"
+    "prettier": "npx prettier . --write",
+    "build-n-run": "npm run build && docker run -p 3000:3000 nextjs-docker",
+    "docker-build": "docker build -t nextjs-docker .",
+    "docker-run": "docker run -p 3000:3000 nextjs-docker"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.13.5",
@@ -38,6 +41,7 @@
     "react-markdown": "^9.0.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "sharp": "^0.33.3",
     "sugar-high": "^0.6.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"

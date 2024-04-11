@@ -28,6 +28,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  output: "standalone",
 };
 
 // export default withMDX(nextConfig);
