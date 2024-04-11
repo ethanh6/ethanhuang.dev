@@ -10,7 +10,7 @@ export default function Header() {
   const current_path = usePathname().split('/')[1] || 'home';
 
   return (
-    <header className="top-0 w-full z-10 bg-white py-8 transition-colors dark:bg-black">
+    <header className="top-0 w-full z-10 py-8 transition-colors">
       <div className="container mx-auto px-4 md:max-w-3xl lg:max-w-5xl">
         {/* Combined the flex and justify-between classes */}
         <div className="flex items-center justify-between">
