@@ -7,7 +7,7 @@ export default function PostList({ posts }) {
   }
 
   return (
-    <ul className="gap-y-2 pt-6 dark:divide-gray-700">
+    <ul className="gap-y-2 pt-6 max-w-full dark:divide-gray-700">
       {posts.map((post, i) => {
         return (
           <li key={i} className="transition-colors">
@@ -16,8 +16,8 @@ export default function PostList({ posts }) {
                 <div className="dark:text-gray-100 sm:text-xl md:text-xl">
                   {post.title}
                 </div>
-                <div>-</div>
-                <div className="dark:text-gray-400 sm:text-xs md:text-sm">
+                <div className="hidden md:text-sm">-</div>
+                <div className="dark:text-gray-400 hidden md:text-sm">
                   {formatDate(post.date)}
                 </div>
               </div>

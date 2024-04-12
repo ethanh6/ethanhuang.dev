@@ -23,10 +23,10 @@ const MobileNav = () => {
   };
 
   return (
-    <div className="sm:hidden">
+    <div className="z-50 md:hidden">
       <button
         type="button"
-        className="h-10 w-10 rounded p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 sm:h-12 sm:w-12 sm:p-3"
+        className="h-10 w-10 rounded p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 sm:w-12 sm:p-3"
         aria-label="Toggle Menu"
         onClick={onToggleNav}
       >

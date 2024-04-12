@@ -1,8 +1,7 @@
 'use client';
 import CustomLink from '@/components/CustomLink';
 import MobileNav from '@/components/MobileNav';
-import SectionContainer from '@/components/SectionContainer';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import { ThemeSwitch } from '@/components/ThemeSwitch';
 import { headerConfigs } from '@/configs/headerConfigs';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -11,30 +10,42 @@ export default function Header() {
   const current_path = usePathname().split('/')[1] || 'home';
 
   return (
-    <header className="top-0 z-10 bg-white/70 py-8 transition-colors dark:border-slate-50/[0.06] dark:bg-gray-900/60">
-      <div className="container mx-auto px-4 sm:px-6 md:max-w-3xl lg:max-w-5xl">
+    <header className="top-0 w-full z-10 py-8 transition-colors">
+      <div className="container mx-auto px-4 md:max-w-3xl lg:max-w-5xl">
         {/* Combined the flex and justify-between classes */}
         <div className="flex items-center justify-between">
           {/* Render site title */}
           <CustomLink
             href="/"
             aria-label={headerConfigs.title}
-            className="font-semibold transition-colors hover:text-slate-400 sm:block"
+            className="font-semibold transition-colors hover:text-slate-400 hidden lg:block"
           >
             {headerConfigs.title}
           </CustomLink>
 
+          <CustomLink
+            href="/"
+            aria-label={headerConfigs.title}
+            className="font-semibold transition-colors hover:text-slate-400 block lg:hidden"
+          >
+            {"EH"}
+          </CustomLink>
+
           {/* Render navigation links */}
-          <div className="flex items-center text-base leading-5 sm:gap-1">
-            {headerConfigs.navLinks.map((link, i) => (
-              <CustomLink
-                key={i}
-                href={link.href}
-                className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
-              >
-                {link.title}
-              </CustomLink>
-            ))}
+          <div className="flex items-center text-base leading-5">
+            <div className="hidden md:block">
+              {headerConfigs.navLinks.map((link, i) => (
+                <CustomLink
+                  key={i}
+                  href={link.href}
+                  className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
+                >
+                  {link.title}
+                </CustomLink>
+              ))}
+            </div>
+            <ThemeSwitch />
+            <MobileNav />
           </div>
         </div>
       </div>
