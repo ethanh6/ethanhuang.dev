@@ -1,7 +1,7 @@
 import PostList from '@/components/PostList';
 import type { NextPage, Metadata } from 'next';
 
-import { getPosts } from '@/lib/markdown';
+import { getFilesByContentType, getContentByFileName } from '@/lib/github';
 
 import { getFilesByContentType, getContentByFileName } from '@/lib/github';
 
@@ -10,9 +10,6 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
-  // deprecated: reading local MDX files
-  // const posts = await getPosts();
-
   const files = await getFilesByContentType({
     contentType: 'post',
   });
@@ -26,6 +23,7 @@ const Home = async () => {
     });
     posts.push({ ...metadata });
   }
+  posts.sort((a, b) => b.date.localeCompare(a.date));
 
   return <PostList posts={posts} />;
 };

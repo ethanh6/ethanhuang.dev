@@ -1,7 +1,6 @@
 import ProjectLayout from '@/components/ProjectLayout';
-// import { siteConfigs } from '@/configs/siteConfigs';
 
-import { getProjects } from '@/lib/markdown';
+import { getFilesByContentType, getContentByFileName } from '@/lib/github';
 
 import type { NextPage, Metadata } from 'next';
 
@@ -10,7 +9,20 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
-  const projects = await getProjects();
+  const files = await getFilesByContentType({
+    contentType: 'project',
+  });
+
+  let projects = [];
+
+  for (const file of files) {
+    const { content, metadata } = await getContentByFileName({
+      contentType: 'project',
+      file,
+    });
+    projects.push({ ...metadata });
+  }
+
   projects.sort((a, b) => a.order - b.order);
 
   return <ProjectLayout projects={projects} />;
