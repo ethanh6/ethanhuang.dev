@@ -1,180 +1,85 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { highlight } from 'sugar-high';
-import React from 'react';
 
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
+export const CustomMdxComponent = {
+  h1: ({ children }) => (
+    <div className="mb-6 border-b border-gray-300 py-4 text-3xl font-bold text-black">
+      {children}
+    </div>
+  ),
+  h2: ({ children }) => (
+    <div className="mb-6 border-b border-gray-200 py-4 text-2xl font-bold text-black">
+      {children}
+    </div>
+  ),
+  h3: ({ children }) => (
+    <div className="mb-4 mt-8 text-2xl font-bold">{children}</div>
+  ),
+  h4: ({ children }) => (
+    <div className="mb-4 mt-6 text-xl font-bold">{children}</div>
+  ),
+  h5: ({ children }) => (
+    <div className="mb-2 mt-4 text-lg font-bold">{children}</div>
+  ),
+  h6: ({ children }) => (
+    <div className="mb-2 mt-4 text-sm font-bold text-gray-700">{children}</div>
+  ),
+  p: (props) => <p {...props} className="mb-4" />,
+  a: ({ href, children, ...props }) => {
+    // Check if it's an internal link
+    const isInternal = href && (href.startsWith('/') || href.startsWith('#'));
 
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
-}
+    // If it's an internal link, use Next.js's Link component
+    if (isInternal) {
+      return (
+        <Link {...props} href={href} className="mb-4">
+          {children}
+        </Link>
+      );
+    }
 
-function CustomLink(props) {
-  let href = props.href;
-
-  if (href.startsWith('/')) {
+    // Otherwise, render as a regular external link
     return (
-      <Link href={href} {...props}>
-        {props.children}
-      </Link>
+      <a href={href} {...props} className="mb-4">
+        {children}
+      </a>
     );
-  }
+  },
 
-  if (href.startsWith('#')) {
-    return <a {...props} />;
-  }
+  img: (props) => {
+    return <Image width={2000} height={500} {...(props as ImageProps)} />;
+  },
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
-}
+  ol: (props) => <ol {...props} className="mb-4 list-inside list-decimal" />,
+  ul: (props) => <ul {...props} className="mb-4 list-inside list-disc" />,
+  li: (props) => <li {...props} className="mb-2" />,
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
-}
-
-function Callout(props) {
-  return (
-    <div className="mb-8 flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
-      <div className="mr-4 flex w-4 items-center">{props.emoji}</div>
-      <div className="callout w-full">{props.children}</div>
-    </div>
-  );
-}
-
-function ProsCard({ title, pros }) {
-  return (
-    <div className="my-4 w-full rounded-xl border border-emerald-200 bg-neutral-50 p-6 dark:border-emerald-900 dark:bg-neutral-900">
-      <span>{`You might use ${title} if...`}</span>
-      <div className="mt-4">
-        {pros.map((pro) => (
-          <div key={pro} className="mb-2 flex items-baseline font-medium">
-            <div className="mr-2 h-4 w-4">
-              <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                  <path d="M22 4L12 14.01l-3-3" />
-                </g>
-              </svg>
-            </div>
-            <span>{pro}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ConsCard({ title, cons }) {
-  return (
-    <div className="my-6 w-full rounded-xl border border-red-200 bg-neutral-50 p-6 dark:border-red-900 dark:bg-neutral-900">
-      <span>{`You might not use ${title} if...`}</span>
-      <div className="mt-4">
-        {cons.map((con) => (
-          <div key={con} className="mb-2 flex items-baseline font-medium">
-            <div className="mr-2 h-4 w-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="h-4 w-4 text-red-500"
-              >
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </div>
-            <span>{con}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-}
-
-function slugify(str) {
-  return str
-    .toString()
-    .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
-}
-
-function createHeading(level: number) {
-  return ({ children }) => {
-    let slug = slugify(children);
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement('a', {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: 'anchor',
-        }),
-      ],
-      children,
+  pre: ({ children }) => {
+    return (
+      <pre className="my-4 rounded-md border-2 border-zinc-400 p-4 hover:border-zinc-800">
+        {children}
+      </pre>
     );
-  };
-}
+  },
 
-// let components = {
-//   h1: createHeading(1),
-//   h2: createHeading(2),
-//   h3: createHeading(3),
-//   h4: createHeading(4),
-//   h5: createHeading(5),
-//   h6: createHeading(6),
-//   Image: RoundedImage,
-//   a: CustomLink,
-//   Callout,
-//   ProsCard,
-//   ConsCard,
-//   code: Code,
-//   Table,
-// };
+  // code: (props) => (
+  //   <code {...props} className="rounded-md px-2 bg-gray-100 py-1" />
+  // ),
 
-let components = {
-  h1: (props) => (
-    <h1 {...props} className="text-lg text-red-500">
-      {props.children}
-    </h1>
+  blockquote: (props) => (
+    <blockquote
+      {...props}
+      className="mb-4 border-l-4 border-gray-300 py-2 pl-4 italic"
+    />
+  ),
+
+  hr: (props) => <hr {...props} className="my-8 border-gray-300" />,
+
+  em: (props) => <em {...props} className="italic" />,
+
+  strong: (props) => <strong {...props} className="font-bold" />,
+
+  inlineCode: (props) => (
+    <code {...props} className="rounded-sm bg-gray-100 px-1" />
   ),
 };
-export function CustomMDX(props) {
-  return (
-    <>
-      <MDXRemote
-        {...props}
-        components={{ ...components, ...(props.components || {}) }}
-      />
-    </>
-  );
-}
