@@ -11,21 +11,7 @@ export const metadata: Metadata = {
 
 const Home = async () => {
   // deprecated: reading local MDX files
-  // const posts = await getPosts();
-
-  const files = await getFilesByContentType({
-    contentType: 'post',
-  });
-
-  let posts = [];
-
-  for (const file of files) {
-    const { content, metadata } = await getContentByFileName({
-      contentType: 'post',
-      file,
-    });
-    posts.push({ ...metadata });
-  }
+  const posts = await getPosts();
 
   return <PostList posts={posts} />;
 };
