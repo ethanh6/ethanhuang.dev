@@ -8,10 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "pretty-quick": "npx pretty-quick",
-    "prettier": "npx prettier . --write",
-    "build-n-run": "npm run build && docker run -p 3000:3000 nextjs-docker",
-    "docker-build": "docker build -t nextjs-docker .",
-    "docker-run": "docker run -p 3000:3000 nextjs-docker"
+    "prettier": "npx prettier . --write"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.13.5",

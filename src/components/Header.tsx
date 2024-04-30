@@ -10,7 +10,7 @@ export default function Header() {
   const current_path = usePathname().split('/')[1] || 'home';
 
   return (
-    <header className="top-0 w-full z-10 py-8 transition-colors">
+    <header className="top-0 z-10 w-full py-8 transition-colors">
       <div className="container mx-auto px-4 md:max-w-3xl lg:max-w-5xl">
         {/* Combined the flex and justify-between classes */}
         <div className="flex items-center justify-between">
@@ -18,7 +18,7 @@ export default function Header() {
           <CustomLink
             href="/"
             aria-label={headerConfigs.title}
-            className="font-semibold transition-colors hover:text-slate-400 hidden lg:block"
+            className="hidden font-semibold transition-colors hover:text-slate-400 lg:block"
           >
             {headerConfigs.title}
           </CustomLink>
@@ -26,9 +26,9 @@ export default function Header() {
           <CustomLink
             href="/"
             aria-label={headerConfigs.title}
-            className="font-semibold transition-colors hover:text-slate-400 block lg:hidden"
+            className="block font-semibold transition-colors hover:text-slate-400 lg:hidden"
           >
-            {"EH"}
+            {'EH'}
           </CustomLink>
 
           {/* Render navigation links */}
