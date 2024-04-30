@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ../../
+      target: builder
+    container_name: prod-app
+    restart: always
+    command: npm run start
+    ports:
+      - '3002:3000'
+    depends_on:
+      - mongodb
+    volumes:
+      - ../../:/app
+      - /app/node_modules
+      - /app/.next
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
