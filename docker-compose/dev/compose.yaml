@@ -4,6 +4,7 @@ services:
   app:
     build:
       context: ../../
+      dockerfile: ./docker-compose/Dockerfile
       target: dev
     container_name: dev-app
     restart: always
