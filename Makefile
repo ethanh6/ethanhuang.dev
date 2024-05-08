@@ -1,3 +1,5 @@
+restart: stop-dev build-dev run-dev
+
 .PHONY: build-dev
 build-dev: ## Build the development docker image.
 	docker compose -f docker-compose/dev/compose.yaml build

@@ -32,7 +32,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 COPY .env.dev .env.local
-
+RUN apk add --no-cache curl
 
 
 
