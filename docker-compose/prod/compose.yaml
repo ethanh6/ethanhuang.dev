@@ -19,9 +19,13 @@ services:
       - /app/.next
 
   mongodb:
-    image: mongo
+    image: mongo:latest
     container_name: mongodb
     restart: always
+    ports:
+      - '27018:27017'
+    expose:
+      - '27017'
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
