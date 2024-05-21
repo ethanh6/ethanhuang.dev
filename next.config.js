@@ -11,6 +11,10 @@ const nextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+
+    // add top level await support
+    config.experiments = { ...config.experiments, topLevelAwait: true };
+
     return config;
   },
   eslint: {
