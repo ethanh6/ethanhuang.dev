@@ -30,6 +30,7 @@ const nextConfig = {
   images: {
     // Enable modern image formats
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   output: 'standalone',
