@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.highlight {
+  @apply font-bold transition-colors hover:text-slate-400;
+}
+
+.highlight-link {
+  @apply font-bold transition-colors hover:text-slate-400 underline underline-offset-4;
+}
+
