@@ -55,7 +55,7 @@ const Home: NextPage<Props> = () => {
               <span className="">Kubernetes (on-prem)</span>
             </li>
             <li>
-              <span className="">Docker</span>
+              <span className="">Docker Compose</span>
             </li>
             <li>
               <span className="">Prometheus</span>
@@ -86,6 +86,9 @@ const Home: NextPage<Props> = () => {
             </li>
             <li>
               <span className="">AWS Route 53</span>
+            </li>
+            <li>
+              <span className="">AWS EC2</span>
             </li>
           </ul>
         </div>
