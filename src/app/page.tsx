@@ -7,7 +7,7 @@ export default function Home() {
     <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
       <h4 className="text-2xl font-bold">Hi!</h4>
       <p className=""> I'm Ethan! </p>
-      <p className=""> Welcome to my personal website.</p>
+      <p className=""> Welcome to my personal website..</p>
     </article>
   );
 }
