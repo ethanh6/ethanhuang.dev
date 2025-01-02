@@ -34,13 +34,14 @@ const Home: NextPage<Props> = () => {
         <span className="highlight">UC San Diego</span>.
       </p>
       <p>
-        I grew up in Taipei, Taiwan and have lived in San Diego, CA and New York, NY.
+        I grew up in Taipei, Taiwan and have lived in San Diego, CA and New
+        York, NY.
       </p>
       <p>I care about:</p>
       <ul className="list-disc space-y-2 pl-6">
         <li>
           <span className="highlight">Learning</span>. I learn cool things
-          across psychology, philosophy, and science
+          across psychology, philosophy, and science.
         </li>
         <li>
           <span className="highlight">Full-stack development</span>. Details in
@@ -55,7 +56,11 @@ const Home: NextPage<Props> = () => {
           coding in Neovim, and I have never stopped loving it.
         </li>
         <li>
-          <span className="highlight">Investing</span>. Surfing with the market is fun.
+          <span className="highlight">Blockchain</span>. DeFi and DEX.
+        </li>
+        <li>
+          <span className="highlight">Investing</span>. Surfing with the market
+          is fun.
         </li>
         <li>
           <span className="highlight">Basketball</span>. Still sharpening my
