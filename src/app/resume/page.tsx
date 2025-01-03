@@ -12,12 +12,22 @@ type Props = {};
 const Home: NextPage<Props> = () => {
   return (
     <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
-      <div className="grid grid-cols-3 gap-4 text-center text-gray-700 dark:text-gray-300">
-        <p className="col-start-1 flex items-center justify-center border-2 border-indigo-500 rounded-lg p-2 text-indigo-500 font-semibold hover:bg-indigo-500 hover:text-white cursor-pointer transition-colors">Download Resume</p>
+      <div className="flex items-center justify-end text-right text-gray-700 dark:text-gray-300">
+        <a
+          href="/files/Resume-Ethan-Huang.pdf"
+          download="EthanHuangResume.pdf"
+          className="cursor-pointer rounded-lg border-2 border-gray-700 px-4 py-2 font-semibold text-gray-700 transition-colors hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-400 dark:text-gray-300"
+        >
+          Download Resume
+        </a>
       </div>
-      <div className="my-4 grid grid-cols-3 gap-4 text-center text-gray-700 dark:text-gray-300">
-        <p className="flex items-center justify-center text-3xl font-bold col-start-2">Ethan Huang</p>
+
+      <div className="itmes-center flex justify-center text-center">
+        <p className="text-3xl font-bold text-gray-700 dark:text-gray-300">
+          Ethan Huang
+        </p>
       </div>
+
       <div className="my-4 grid grid-cols-4 gap-4 text-center text-gray-700 dark:text-gray-300">
         <CustomLink
           href="https://ethanhuang.dev"
@@ -45,16 +55,16 @@ const Home: NextPage<Props> = () => {
         </CustomLink>
       </div>
       <div className="">
-        <p className="highlight mb-4">Professional Experience</p>
+        <p className="highlight my-4">Professional Experience</p>
       </div>
       <div className="">
-        <p className="highlight mb-4">Education</p>
+        <p className="highlight my-4">Education</p>
       </div>
       <div className="">
-        <p className="highlight mb-4">Projects and Open Source</p>
+        <p className="highlight my-4">Projects and Open Source</p>
       </div>
       <div className="">
-        <p className="highlight mb-4">Technical Skills</p>
+        <p className="highlight my-4">Technical Skills</p>
       </div>
     </article>
   );
