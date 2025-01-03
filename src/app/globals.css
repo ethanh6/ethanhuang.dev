@@ -36,28 +36,28 @@
   }
 
   .dark {
-    --background: 56 0% 0%;
+    --background: 73 31% 12%;
     --foreground: 210 40% 98%;
 
-    --card: 56 0% 0%;
+    --card: 73 31% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 56 0% 0%;
+    --popover: 73 31% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 56 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 73 31% 12%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 56 0% 0%;
+    --secondary: 73 31% 12%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 56 0% 0%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 73 31% 12%;
+    --muted-foreground: 73 31% 12%;
 
-    --accent: 56 0% 0%;
+    --accent: 73 31% 12%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 56 0% 0%;
+    --destructive: 73 31% 12%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
@@ -80,6 +80,5 @@
 }
 
 .highlight-link {
-  @apply font-bold transition-colors hover:text-slate-400 underline underline-offset-4;
+  @apply font-bold underline underline-offset-4 transition-colors hover:text-slate-400;
 }
-
