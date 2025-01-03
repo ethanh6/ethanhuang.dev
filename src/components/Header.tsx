@@ -38,7 +38,7 @@ export default function Header() {
                 <CustomLink
                   key={i}
                   href={link.href}
-                  className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
+                  className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400 underline underline-offset-8' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
                 >
                   {link.title}
                 </CustomLink>
