@@ -11,7 +11,7 @@ type Props = {};
 
 const Home: NextPage<Props> = () => {
   return (
-    <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
+    <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 transition-colors md:space-y-5">
       <div className="flex items-center justify-end text-right text-gray-700 dark:text-gray-300">
         <a
           href="/files/Resume-Ethan-Huang.pdf"
@@ -22,13 +22,13 @@ const Home: NextPage<Props> = () => {
         </a>
       </div>
 
-      <div className="itmes-center flex justify-center text-center">
-        <p className="text-3xl font-bold text-gray-700 dark:text-gray-300">
+      <div className="py-3 flex items-center justify-center">
+        <p className="text-center text-3xl font-bold text-gray-700 dark:text-gray-300">
           Ethan Huang
         </p>
       </div>
 
-      <div className="my-4 grid grid-cols-4 gap-4 text-center text-gray-700 dark:text-gray-300">
+      <div className="py-3 grid grid-cols-4 gap-4 text-center text-gray-700 dark:text-gray-300">
         <CustomLink
           href="https://ethanhuang.dev"
           className="hidden font-semibold transition-colors hover:text-slate-400 lg:block"
@@ -54,17 +54,17 @@ const Home: NextPage<Props> = () => {
           Email
         </CustomLink>
       </div>
-      <div className="">
-        <p className="highlight my-4">Professional Experience</p>
+      <div className="flex flex-row">
+        <div className="highlight text-2xl">Professional Experience</div>
       </div>
-      <div className="">
-        <p className="highlight my-4">Education</p>
+      <div className="flex justify-start">
+        <p className="highlight text-2xl">Education</p>
       </div>
-      <div className="">
-        <p className="highlight my-4">Projects and Open Source</p>
+      <div className="flex justify-start">
+        <p className="highlight text-2xl">Projects and Open Source</p>
       </div>
-      <div className="">
-        <p className="highlight my-4">Technical Skills</p>
+      <div className="flex justify-start">
+        <p className="highlight text-2xl">Technical Skills</p>
       </div>
     </article>
   );

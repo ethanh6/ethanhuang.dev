@@ -5,7 +5,7 @@ import Me from '@images/me.jpg';
 export default function Home() {
   return (
     <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
-      <p className="text-3xl font-bold text-indigo-600">Hi!</p>
+      <p className="text-3xl highlight">Hi!</p>
       <p className="">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
