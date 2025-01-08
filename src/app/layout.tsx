@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Baskervville, Overlock } from 'next/font/google';
 import './globals.css';
 
 import Footer from '@/components/Footer';
@@ -11,6 +11,16 @@ import { ThemeProvider } from 'next-themes';
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
+});
+
+const baskervville = Baskervville({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const overlock = Overlock({
+  weight: '400',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={montserrat.className}>
+    <html lang="en" suppressHydrationWarning className={overlock.className}>
       <body className="flex min-h-screen flex-col items-center">
         <ThemeProvider
           attribute="class"

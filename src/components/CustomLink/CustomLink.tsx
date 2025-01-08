@@ -8,7 +8,7 @@ const CustomLink = ({ href, children, ...rest }: Props) => {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
-  if (isInternalLink || isAnchorLink) {
+  if (isInternalLink || isAnchorLink || true) {
     return (
       <Link {...rest} href={href}>
         {children}
