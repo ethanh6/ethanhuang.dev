@@ -57,11 +57,12 @@ const Home: NextPage<Props> = () => {
           Professional Experience
         </div>
         <div className="pl-5">
-          <div className="highlight mt-3 text-2xl">
+          <div className="highlight mt-5 text-2xl">
             Software Engineer @ Supermicro
           </div>
           <div className="">Nov. 2023 - Current</div>
-          <div className="my-3 text-xl italic">Full Stack Development</div>
+          <div className="">San Jose, CA</div>
+          <div className="my-4 text-xl italic">Full Stack Development</div>
           <ul className="list-inside list-disc pl-5">
             <li className="leading-loose">
               Develop mission-critical internal applications, such as firmware
@@ -89,7 +90,7 @@ const Home: NextPage<Props> = () => {
               significantly reducing downtime.
             </li>
           </ul>
-          <div className="my-3 text-xl italic">DevOps and Infrastructure</div>
+          <div className="my-4 text-xl italic">DevOps and Infrastructure</div>
           <ul className="list-inside list-disc pl-5">
             <li className="leading-loose">
               Bootstrap and manage 10+ highly available, multi-region
@@ -116,6 +117,21 @@ const Home: NextPage<Props> = () => {
               Participate in on-call rotation, troubleshooting and resolving
               critical issues rapidly to minimize system downtime by 90%.
             </li>
+          </ul>
+
+          <hr className="my-4 border-gray-300 dark:border-gray-600" />
+
+          <div className="highlight mt-5 text-2xl">
+            Software Engineer @ NavisX
+          </div>
+          <div className="">Mar. 2023 - Oct. 2023</div>
+          <div className="">Remote</div>
+          <div className="my-4 text-xl italic">Full Stack Development</div>
+          <ul className="list-inside list-disc pl-5">
+            <li className="leading-loose">Developed a web application with 20+ custom React components using Next.js 13, TailwindCSS, Typescript and Zustand.
+</li>
+            <li className="leading-loose">Led the technical team at an early-stage startup, driving market research and product strategy in a fast-paced environment.
+</li>
           </ul>
         </div>
       </div>
