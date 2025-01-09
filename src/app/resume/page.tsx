@@ -56,7 +56,7 @@ const Home: NextPage<Props> = () => {
         <div className="highlight text-center text-3xl">
           Professional Experience
         </div>
-        <div className="pl-5">
+        <div className="">
           <div className="highlight mt-5 text-2xl">
             Software Engineer @ Supermicro
           </div>
@@ -128,15 +128,44 @@ const Home: NextPage<Props> = () => {
           <div className="">Remote</div>
           <div className="my-4 text-xl italic">Full Stack Development</div>
           <ul className="list-inside list-disc pl-5">
-            <li className="leading-loose">Developed a web application with 20+ custom React components using Next.js 13, TailwindCSS, Typescript and Zustand.
-</li>
-            <li className="leading-loose">Led the technical team at an early-stage startup, driving market research and product strategy in a fast-paced environment.
-</li>
+            <li className="leading-loose">
+              Developed web applications with 20+ custom React components using
+              Next.js 13, TailwindCSS, Typescript and Zustand.
+            </li>
+            <li className="leading-loose">
+              Led the technical team at an early-stage startup, driving market
+              research and product strategy in a fast-paced environment.
+            </li>
           </ul>
+          <hr className="my-4 border-gray-300 dark:border-gray-600" />
         </div>
       </div>
       <div className="flex flex-col">
         <p className="highlight text-center text-3xl">Education</p>
+
+        <div className="highlight mt-5 text-2xl">
+          Cornell Tech, Cornell University
+        </div>
+        <div className="">2022</div>
+        <div className="my-4 text-xl italic">
+          Master of Engineering in Computer Science
+        </div>
+        <ul className="list-inside list-disc pl-5"></ul>
+        <hr className="my-4 border-gray-300 dark:border-gray-600" />
+
+        <div className="highlight mt-5 text-2xl">
+          University of California - San Diego
+        </div>
+        <div className="">2021</div>
+        <div className="my-4 text-xl italic">
+          Bachelor of Science in Computer Science
+        </div>
+        <ul className="list-inside list-disc pl-5">
+          {
+            // <li className="leading-loose">jjjj</li>
+          }
+        </ul>
+        <hr className="my-4 border-gray-300 dark:border-gray-600" />
       </div>
       <div className="flex flex-col">
         <p className="highlight text-center text-3xl">

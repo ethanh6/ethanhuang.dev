@@ -9,8 +9,8 @@ export default function Home() {
       <p className="">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
-        I’m a <span className="highlight">Software Engineer</span> with 1.5
-        years of experience, specializing in building scalable{' '}
+        I’m a <span className="highlight">Software Engineer</span> with 2 years
+        of experience, specializing in building scalable{' '}
         <span className="highlight"> full-stack </span>applications and managing
         reliable infrastructure. I focus on designing efficient systems that
         solve real-world challenges and drive operational success.{' '}
@@ -35,6 +35,10 @@ export default function Home() {
         and check out my{' '}
         <a href="https://github.com/ethanh6" className="highlight-link">
           GitHub
+        </a>{' '}
+        and{' '}
+        <a href="/resume" className="highlight-link">
+          Resume
         </a>
         .
       </p>
