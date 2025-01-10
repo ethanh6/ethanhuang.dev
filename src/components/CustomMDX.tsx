@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 export const CustomMdxComponent = {
   h1: ({ children }) => (
-    <div className="mb-6 border-b border-gray-300 py-4 text-3xl font-bold text-black">
+    <div className="mb-6 border-b border-gray-300 py-4 text-3xl font-bold">
       {children}
     </div>
   ),
   h2: ({ children }) => (
-    <div className="mb-6 border-b border-gray-200 py-4 text-2xl font-bold text-black">
+    <div className="mb-6 border-b border-gray-200 py-4 text-2xl font-bold">
       {children}
     </div>
   ),
@@ -22,7 +22,7 @@ export const CustomMdxComponent = {
     <div className="mb-2 mt-4 text-lg font-bold">{children}</div>
   ),
   h6: ({ children }) => (
-    <div className="mb-2 mt-4 text-sm font-bold text-gray-700">{children}</div>
+    <div className="mb-2 mt-4 text-sm font-bold">{children}</div>
   ),
   p: (props) => <p {...props} className="mb-4" />,
   a: ({ href, children, ...props }) => {
