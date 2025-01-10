@@ -2,16 +2,12 @@ import Image from 'next/image';
 import CustomLink from '@/components/CustomLink';
 //
 export default function ProjectCard({ project }) {
-  const { title, description, imgSrc, imgAlt, date, slug } = project;
+  const { title, description, imgSrc, imgAlt, date, slug, keywords } = project;
 
   return (
     <div>
-      <div
-        className={
-          'overflow-hidden rounded-md border-2 border-gray-300/60 transition-colors dark:border-gray-700/60'
-        }
-      >
-        {imgSrc !== '' && (
+      <div className={'overflow-hidden rounded-md transition-colors'}>
+        {imgSrc !== '' && false && (
           <CustomLink
             href={`/project/${slug}`}
             aria-label={`Link to ${title}`}
@@ -43,6 +39,9 @@ export default function ProjectCard({ project }) {
           </h2>
           <p className="prose max-w-none text-gray-500 transition-colors dark:text-gray-400">
             {description}
+          </p>
+          <p className="prose max-w-none text-gray-500 transition-colors dark:text-gray-400">
+            Keywords: {keywords}
           </p>
         </div>
       </div>

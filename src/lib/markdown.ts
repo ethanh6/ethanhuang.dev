@@ -27,7 +27,7 @@ async function getMDXData(content_type: ContentType) {
   );
 
   return mdxFiles
-    .filter((mdx) => mdx.type === content_type)
+    .filter((mdx) => mdx.type === content_type && mdx.enabled)
     .sort((a, b) => +new Date(b.date) - +new Date(a.date));
 }
 
