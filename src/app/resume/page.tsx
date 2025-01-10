@@ -22,36 +22,6 @@ const Home: NextPage<Props> = () => {
         </a>
       </div>
 
-      <div className="flex items-center justify-center py-3">
-        <p className="text-center text-5xl font-bold text-gray-700 dark:text-gray-300">
-          Ethan Huang
-        </p>
-      </div>
-
-      <div className="grid grid-cols-4 gap-4 py-3 text-center text-gray-700 dark:text-gray-300">
-        <CustomLink href="https://ethanhuang.dev" className="highlight-link">
-          ethanhuang.dev
-        </CustomLink>
-        <CustomLink
-          href="https://github.com/ethanh6"
-          className="highlight-link"
-        >
-          GitHub
-        </CustomLink>
-        <CustomLink
-          href="https://www.linkedin.com/in/ethanhuang0606"
-          className="highlight-link"
-        >
-          LinkedIn
-        </CustomLink>
-        <CustomLink
-          href="mailto:ethanhuangjob@gmail.com"
-          className="highlight-link"
-        >
-          Email
-        </CustomLink>
-      </div>
-
       <div className="flex flex-col">
         <div className="highlight text-center text-3xl">
           Professional Experience
@@ -139,41 +109,6 @@ const Home: NextPage<Props> = () => {
           </ul>
           <hr className="my-4 border-gray-300 dark:border-gray-600" />
         </div>
-      </div>
-      <div className="flex flex-col">
-        <p className="highlight text-center text-3xl">Education</p>
-
-        <div className="highlight mt-5 text-2xl">
-          Cornell Tech, Cornell University
-        </div>
-        <div className="">2022</div>
-        <div className="my-4 text-xl italic">
-          Master of Engineering in Computer Science
-        </div>
-        <ul className="list-inside list-disc pl-5"></ul>
-        <hr className="my-4 border-gray-300 dark:border-gray-600" />
-
-        <div className="highlight mt-5 text-2xl">
-          University of California - San Diego
-        </div>
-        <div className="">2021</div>
-        <div className="my-4 text-xl italic">
-          Bachelor of Science in Computer Science
-        </div>
-        <ul className="list-inside list-disc pl-5">
-          {
-            // <li className="leading-loose">jjjj</li>
-          }
-        </ul>
-        <hr className="my-4 border-gray-300 dark:border-gray-600" />
-      </div>
-      <div className="flex flex-col">
-        <p className="highlight text-center text-3xl">
-          Projects and Open Source
-        </p>
-      </div>
-      <div className="flex flex-col">
-        <p className="highlight text-center text-3xl">Technical Skills</p>
       </div>
     </article>
   );
