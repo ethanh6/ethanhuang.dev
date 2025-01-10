@@ -9,10 +9,12 @@ export const metadata: Metadata = {
 
 function ProjectLayout({ projects }) {
   return (
-    <div className="divide-y divide-dotted divide-gray-300 dark:divide-gray-600">
-      {projects.map((proj, i) => (
-        <ProjectCard key={i} project={proj} />
-      ))}
+    <div className="my-8">
+      <div className="divide-y divide-dotted divide-gray-300 dark:divide-gray-600">
+        {projects.map((proj, i) => (
+          <ProjectCard key={i} project={proj} />
+        ))}
+      </div>
     </div>
   );
 }
