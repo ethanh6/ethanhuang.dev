@@ -1,7 +1,6 @@
 import type { NextPage, Metadata } from 'next';
 import { ArticleJsonLd } from 'next-seo';
 import { siteConfigs } from '@/configs/siteConfigs';
-import CustomLink from '@/components/CustomLink';
 
 export const metadata: Metadata = {
   title: 'About',
