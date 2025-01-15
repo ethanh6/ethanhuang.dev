@@ -88,7 +88,7 @@ const Home: NextPage<Props> = () => {
       <div className="mt-12 space-y-3 md:space-y-5">
         <p className="highlight">Contact:</p>
         <p className="">
-          If you'd like to get in touch, shoot me a message on <span className="highlight-link">ethanhuang0606 at gmail dot com.</span>{' '}
+          If you'd like to get in touch, shoot me a message on <span className="highlight-link">ethanhuang0606 at gmail dot com</span>.{' '}
         </p>
         <p>
           You can also find me elsewhere on{' '}
