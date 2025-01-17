@@ -32,82 +32,106 @@ const Home: NextPage<Props> = () => {
           <div className="">Nov. 2023 - Current</div>
           <div className="">San Jose, CA</div>
           <div className="my-4 text-xl italic">Full Stack Development</div>
-          <ul className="list-inside list-disc pl-5">
-            <li className="leading-loose">
-              Develop mission-critical internal applications, such as firmware
-              flashing, inventory, and BOM management, using TypeScript, React,
-              Express, and databases like MSSQL, MariaDB, MySQL, Cassandra and
-              ScyllaDB.
+          <ul className="list-disc space-y-3 pl-5">
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Develop and optimize 10+ mission-critical services using
+              TypeScript, React, Express, GraphQL Apollo, and RESTful APIs
+              within a distributed system architecture, delivering robust,
+              scalable, and user-friendly applications.
             </li>
-            <li className="leading-loose">
-              Reduce operational overhead by 30% on the global production lines
-              by implementing user-requested features.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Manage and optimize databases including MariaDB, MSSQL, Cassandra,
+              and ScyllaDB, and maintain event-driven communication with Kafka,
+              ensuring seamless integration and high performance across
+              distributed system components.
             </li>
-            <li className="leading-loose">
-              Refactor legacy code, reducing codebase complexity and increased
-              test coverage to over 95% using Jest.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Reduce operational overhead by 50% on the global production lines
+              by delivering custom features and hot fixes.
             </li>
-            <li className="leading-loose">
-              Improve SQL query performance by 80% through GraphQL with Apollo
-              Server, optimize batch processing, streamline data fetching and
-              boost API efficiency.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Refactor legacy codebases, increasing test coverage to 97%+ with
+              Jest, significantly improving code maintainability and
+              reliability.
             </li>
-            <li className="leading-loose">
-              Enhance distributed system stability by implementing multi-cluster
-              data synchronization, database migration, backup, and disaster
-              recovery with Rook-Ceph, Syncthing, and MariaDB Galera,
-              significantly reducing downtime.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Boost GraphQL performance by 95%, optimizing data fetching and
+              reducing latency for better user experiences.{' '}
+            </li>
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Orchestrate multi-cluster data operations, including
+              synchronizations, migrations, and disaster recovery for 2 TB of
+              data using Rook-Ceph, MariaDB-Galera, and Bash scripting, ensuring
+              high availability and resilience.
             </li>
           </ul>
           <div className="my-4 text-xl italic">DevOps and Infrastructure</div>
-          <ul className="list-inside list-disc pl-5">
-            <li className="leading-loose">
-              Bootstrap and manage 10+ highly available, multi-region
-              on-premises Kubernetes clusters, automating bare-metal hardware
+          <ul className="list-disc space-y-3 pl-5">
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Bootstrap and manage 20+ highly available, multi-region
+              on-premises Kubernetes clusters, automating bare-metal
               provisioning with Ansible and ensuring network reliability with
               HAProxy, Kube-VIP and Nginx.
             </li>
-            <li className="leading-loose">
-              Independently design and establish CI/CD pipelines with DroneCI,
-              ArgoCD, Helm, and Kustomize, deploying 20+ applications across 10+
-              Kubernetes clusters in multiple environments, significantly
-              cutting deployment time and overhead.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Spearhead the adoption of ArgoCD and GitOps as the project owner,
+              leading its implementation and optimization to manage 10+
+              applications across 20+ Kubernetes clusters, improving deployment
+              efficiency by 90%.
             </li>
-            <li className="leading-loose">
-              Reinforce data availability with Rook-Ceph for distributed storage
-              and improve observability with Prometheus and Grafana.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Design and establish CI/CD pipelines with ArgoCD, DroneCI, Helm,
+              and Kustomize, enhancing maintainability, scalability, and
+              developer productivity by 50%, while showcasing deep expertise in
+              Kubernetes and its ecosystem.
             </li>
-            <li className="leading-loose">
-              Construct multi-purpose development environments with Docker
-              Compose and Virtual Machines, cutting setup time by 60% and image
-              sizes by 80%, boosting efficiency and resource utilization.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Enhance system observability by configuring Prometheus for metric
+              collection and Grafana for visualization.
             </li>
-            <li className="leading-loose">
-              Participate in on-call rotation, troubleshooting and resolving
-              critical issues rapidly to minimize system downtime by 90%.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Construct multi-purpose containerized environments with Docker
+              Compose, reducing setup time by 60% and optimizing image sizes by
+              80%, significantly boosting efficiency and resource utilization.
+            </li>
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Mentor team members on GitOps best practices, fostering
+              collaboration and technical excellence.
             </li>
           </ul>
 
-          <hr className="my-4 border-gray-300 dark:border-gray-600" />
-
-          <div className="highlight mt-5 text-2xl">
-            Software Engineer @ NavisX
+          <div className="highlight mt-12 text-2xl">
+            Software Engineer @ NavisX (Startup)
           </div>
           <div className="">Mar. 2023 - Oct. 2023</div>
           <div className="">Remote</div>
           <div className="my-4 text-xl italic">Full Stack Development</div>
-          <ul className="list-inside list-disc pl-5">
-            <li className="leading-loose">
-              Developed web applications with 20+ custom React components using
+          <ul className="list-disc pl-5">
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Developed a web application with 20+ custom React components, with
               Next.js 13, TailwindCSS, Typescript and Zustand.
             </li>
-            <li className="leading-loose">
-              Led the technical team at an early-stage startup, driving market
-              research and product strategy in a fast-paced environment.
+            <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
+              Led the technical team at an early-stage startup, driving rapid
+              product iterations in a dynamic environment.
             </li>
           </ul>
-          <hr className="my-4 border-gray-300 dark:border-gray-600" />
         </div>
+
+        <div className="my-12" />
+
+        <div className="highlight text-center text-3xl">Education</div>
+        <div className="highlight mt-5 text-2xl">
+          Cornell Tech, Cornell University
+        </div>
+        <div className="">Master of Engineering in Computer Science, 2022</div>
+        <div className="">New York, NY</div>
+
+        <div className="highlight mt-12 text-2xl">
+          University of California - San Diego
+        </div>
+        <div className="">Bachelor of Science in Computer Science, 2021</div>
+        <div className="">La Jolla, CA</div>
       </div>
     </article>
   );

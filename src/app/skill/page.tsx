@@ -11,9 +11,9 @@ type Props = {};
 const Home: NextPage<Props> = () => {
   return (
     <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
-      <div className="mt-4 grid grid-cols-3 gap-4 text-gray-700 dark:text-gray-300">
+      <div className="mt-4 grid grid-cols-1 gap-4 text-gray-700 dark:text-gray-300 sm:grid-cols-2 md:grid-cols-4">
         <div>
-          <p className="highlight mb-4">Full-stack Development</p>
+          <p className="highlight my-4 text-xl">Full-stack Development</p>
           <ul className="list-disc space-y-2 pl-6">
             <li>
               <span className="">TypeScript</span>
@@ -36,12 +36,14 @@ const Home: NextPage<Props> = () => {
             <li>
               <span className="">Next.js</span>
             </li>
-            <li>Node.js</li>
+            <li>
+              <span className="">Node.js</span>
+            </li>
             <li>
               <span className="">GraphQL Apollo Server</span>
             </li>
             <li>
-              <span className="">Prisma</span>
+              <span className="">Prisma ORM</span>
             </li>
             <li>
               <span className="">TailwindCSS</span>{' '}
@@ -49,7 +51,7 @@ const Home: NextPage<Props> = () => {
           </ul>
         </div>
         <div>
-          <p className="highlight mb-4">Infrastructure and DevOps</p>
+          <p className="highlight my-4 text-xl">Infra & DevOps</p>
           <ul className="list-disc space-y-2 pl-6">
             <li>
               <span className="">Kubernetes (on-prem)</span>
@@ -76,10 +78,15 @@ const Home: NextPage<Props> = () => {
               <span className="">Helm</span>{' '}
             </li>
             <li>
+              <span className="">Kustomize</span>{' '}
+            </li>
+            <li>
               <span className="">Ansible</span>{' '}
             </li>
           </ul>
-          <p className="highlight my-4">Cloud</p>
+        </div>
+        <div>
+          <p className="highlight my-4 text-xl">Cloud</p>
           <ul className="list-disc space-y-2 pl-6">
             <li>
               <span className="">AWS Amplify</span>
@@ -90,10 +97,13 @@ const Home: NextPage<Props> = () => {
             <li>
               <span className="">AWS EC2</span>
             </li>
+            <li>
+              <span className="">Vercel</span>
+            </li>
           </ul>
         </div>
         <div>
-          <p className="highlight mb-4">Database</p>
+          <p className="highlight my-4 text-xl">Database</p>
           <ul className="list-disc space-y-2 pl-6">
             <li>
               <span className="">Redis</span>
