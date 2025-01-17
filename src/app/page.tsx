@@ -23,7 +23,7 @@ export default function Home() {
         that tackle complex challenges while ensuring reliability and
         scalability.{' '}
       </p>
-      <p className="highlight"> I'm currently open to new opportunities! </p>
+      <p className="highlight"> I'm currently looking for new career opportunities! </p>
 
       <p className="">
         Feel free to reach out to me on{' '}
@@ -49,9 +49,9 @@ export default function Home() {
         <a href="/about" className="highlight-link">
           more about me
         </a>
-        ,{' '}
+        ,{' '}my{' '}
         <a href="/skill" className="highlight-link">
-          my skills
+          skills
         </a>
         ,{' '}
         <a href="/project" className="highlight-link">

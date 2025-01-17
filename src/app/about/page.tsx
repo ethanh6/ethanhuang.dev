@@ -26,8 +26,9 @@ const Home: NextPage<Props> = () => {
           <span className="highlight">Supermicro</span>.
         </p>
         <p>
-          I focus on <span className="highlight">full-stack development</span>{' '}
-          and <span className="highlight">infrastructure automation</span>.
+          I focus on <span className="highlight">full-stack development</span>,{' '}
+          <span className="highlight">infrastructure</span>,{' '}
+          and <span className="highlight">DevOps</span>.
         </p>
         <p>
           Previously, I graduated from{' '}
@@ -46,11 +47,16 @@ const Home: NextPage<Props> = () => {
             across psychology, philosophy, and science.
           </li>
           <li>
-            <span className="highlight">Full-stack development</span>. Details
+            <span className="highlight">Software Development</span>. Full Stack and DevOps. See more
             in the{' '}
             <a href="/skill" className="highlight-link">
               skill
             </a>{' '}
+            and{' '}
+            <a href="/resume" className="highlight-link">
+              resume
+            </a>{' '}
+
             page.
           </li>
           <li>
@@ -91,7 +97,7 @@ const Home: NextPage<Props> = () => {
           If you'd like to get in touch, shoot me a message on <span className="highlight-link">ethanhuang0606 at gmail dot com</span>.{' '}
         </p>
         <p>
-          You can also find me elsewhere on{' '}
+          You can also find me on{' '}
           <CustomLink href="https://github.com/ethanh6" className="highlight-link">Github</CustomLink>,{' '}
           <CustomLink href="https://www.linkedin.com/in/ethanhuang0606" className="highlight-link">Linkedin</CustomLink>.
         </p>
