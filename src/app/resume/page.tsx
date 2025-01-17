@@ -31,7 +31,24 @@ const Home: NextPage<Props> = () => {
           </div>
           <div className="">Nov. 2023 - Current</div>
           <div className="">San Jose, CA</div>
-          <div className="my-4 text-xl italic">Full Stack Development</div>
+
+          <div className="my-6 flex flex-col space-y-2">
+            <div className="text-base italic">
+              As a core member of a small yet critical team, I develop scalable
+              internal applications and manage on-premises Kubernetes
+              infrastructure to support production processes, focusing on robust
+              Full-Stack solutions, database optimization, and multi-region
+              cluster orchestration.
+            </div>
+            <div className="text-base italic">
+              I proactively identify and implement the best software to solve
+              problems, collaborate with cross-functional teams, and enhance
+              systems based on user feedback to ensure alignment with business
+              needs.
+            </div>
+          </div>
+
+          <div className="my-4 text-xl">Full Stack Development</div>
           <ul className="list-disc space-y-3 pl-5">
             <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
               Develop and optimize 10+ mission-critical services using
@@ -65,7 +82,7 @@ const Home: NextPage<Props> = () => {
               high availability and resilience.
             </li>
           </ul>
-          <div className="my-4 text-xl italic">DevOps and Infrastructure</div>
+          <div className="my-4 text-xl">DevOps and Infrastructure</div>
           <ul className="list-disc space-y-3 pl-5">
             <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
               Bootstrap and manage 20+ highly available, multi-region
@@ -105,7 +122,7 @@ const Home: NextPage<Props> = () => {
           </div>
           <div className="">Mar. 2023 - Oct. 2023</div>
           <div className="">Remote</div>
-          <div className="my-4 text-xl italic">Full Stack Development</div>
+          <div className="my-4 text-xl">Full Stack Development</div>
           <ul className="list-disc pl-5">
             <li className="padding-left: 1.25rem; text-indent: -1.25rem;">
               Developed a web application with 20+ custom React components, with
