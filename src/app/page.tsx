@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import LayoutPerPage from '@/components/LayoutPerPage';
 import Me from '@images/me.jpg';
 
@@ -9,7 +8,7 @@ export default function Home() {
       <p className="">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
-        I’m a <span className="highlight">Software Engineer</span> specializing
+        I'm a <span className="highlight">Software Engineer</span> specializing
         in building scalable <span className="highlight"> full-stack </span>
         applications and managing reliable{' '}
         <span className="highlight">infrastructure</span>. I focus on designing
@@ -24,6 +23,11 @@ export default function Home() {
         scalability.{' '}
       </p>
       <p className="highlight"> I'm currently looking for new career opportunities! </p>
+
+      <p className="">
+        I'm a software engineer with a passion for building scalable and
+        reliable systems. I'm currently looking for new career opportunities!
+      </p>
 
       <p className="">
         Feel free to reach out to me on{' '}
