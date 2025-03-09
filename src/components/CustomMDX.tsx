@@ -1,85 +1,128 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { ImageProps } from 'next/image';
 
 export const CustomMdxComponent = {
   h1: ({ children }) => (
-    <div className="mb-6 border-b border-gray-300 py-4 text-3xl font-bold">
+    <h1 className="mb-8 mt-12 border-b border-gray-200 pb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
       {children}
-    </div>
+    </h1>
   ),
   h2: ({ children }) => (
-    <div className="mb-6 border-b border-gray-200 py-4 text-2xl font-bold">
+    <h2 className="mb-6 mt-10 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
       {children}
-    </div>
+    </h2>
   ),
   h3: ({ children }) => (
-    <div className="mb-4 mt-8 text-2xl font-bold">{children}</div>
+    <h3 className="mb-4 mt-8 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+      {children}
+    </h3>
   ),
   h4: ({ children }) => (
-    <div className="mb-4 mt-6 text-xl font-bold">{children}</div>
+    <h4 className="mb-4 mt-6 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+      {children}
+    </h4>
   ),
   h5: ({ children }) => (
-    <div className="mb-2 mt-4 text-lg font-bold">{children}</div>
+    <h5 className="mb-2 mt-4 text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+      {children}
+    </h5>
   ),
   h6: ({ children }) => (
-    <div className="mb-2 mt-4 text-sm font-bold">{children}</div>
+    <h6 className="mb-2 mt-4 text-base font-bold tracking-tight text-gray-900 dark:text-gray-100">
+      {children}
+    </h6>
   ),
-  p: (props) => <p {...props} className="mb-4" />,
+  p: ({ children }) => (
+    <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+      {children}
+    </p>
+  ),
   a: ({ href, children, ...props }) => {
-    // Check if it's an internal link
     const isInternal = href && (href.startsWith('/') || href.startsWith('#'));
+    const baseStyles = "text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors";
 
-    // If it's an internal link, use Next.js's Link component
     if (isInternal) {
       return (
-        <Link {...props} href={href} className="mb-4">
+        <Link {...props} href={href} className={baseStyles}>
           {children}
         </Link>
       );
     }
 
-    // Otherwise, render as a regular external link
     return (
-      <a href={href} {...props} className="mb-4">
+      <a 
+        href={href} 
+        {...props} 
+        className={baseStyles}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {children}
       </a>
     );
   },
-
   img: (props) => {
-    return <Image width={2000} height={500} {...(props as ImageProps)} />;
-  },
-
-  ol: (props) => <ol {...props} className="mb-4 list-inside list-decimal" />,
-  ul: (props) => <ul {...props} className="mb-4 list-inside list-disc" />,
-  li: (props) => <li {...props} className="mb-2" />,
-
-  pre: ({ children }) => {
     return (
-      <pre className="my-4 rounded-md border-2 border-zinc-400 p-4 hover:border-zinc-800">
-        {children}
-      </pre>
+      <div className="my-8">
+        <Image
+          width={2000}
+          height={500}
+          {...(props as ImageProps)}
+          className="rounded-lg shadow-lg"
+          alt={props.alt || ''}
+        />
+      </div>
     );
   },
-
+  ol: (props) => (
+    <ol {...props} className="mb-6 ml-6 list-decimal space-y-2 text-gray-700 dark:text-gray-300" />
+  ),
+  ul: (props) => (
+    <ul {...props} className="mb-6 ml-6 list-disc space-y-2 text-gray-700 dark:text-gray-300" />
+  ),
+  li: (props) => (
+    <li {...props} className="text-lg leading-relaxed" />
+  ),
+  pre: ({ children }) => {
+    return (
+      <div className="my-8 overflow-x-auto rounded-lg bg-gray-50 dark:bg-gray-900">
+        <pre className="p-4 text-sm leading-relaxed text-gray-800 dark:text-gray-200">
+          {children}
+        </pre>
+      </div>
+    );
+  },
   // code: (props) => (
-  //   <code {...props} className="rounded-md px-2 bg-gray-100 py-1" />
+  //   <code {...props} className="rounded bg-gray-100 px-1.5 py-0.5 text-sm dark:bg-gray-800" />
   // ),
-
   blockquote: (props) => (
     <blockquote
       {...props}
-      className="mb-4 border-l-4 border-gray-300 py-2 pl-4 italic"
+      className="my-8 border-l-4 border-gray-200 pl-4 italic text-gray-700 dark:border-gray-700 dark:text-gray-300"
     />
   ),
-
-  hr: (props) => <hr {...props} className="my-8 border-gray-300" />,
-
-  em: (props) => <em {...props} className="italic" />,
-
-  strong: (props) => <strong {...props} className="font-bold" />,
-
-  inlineCode: (props) => (
-    <code {...props} className="rounded-sm bg-gray-100 px-1" />
+  hr: (props) => (
+    <hr {...props} className="my-12 border-gray-200 dark:border-gray-700" />
+  ),
+  em: (props) => (
+    <em {...props} className="italic text-gray-900 dark:text-gray-100" />
+  ),
+  strong: (props) => (
+    <strong {...props} className="font-bold text-gray-900 dark:text-gray-100" />
+  ),
+  // inlineCode: (props) => (
+  //   <code {...props} className="rounded bg-gray-100 px-1.5 py-0.5 text-sm dark:bg-gray-800" />
+  // ),
+  table: (props) => (
+    <div className="my-8 overflow-x-auto">
+      <table {...props} className="min-w-full divide-y divide-gray-200 dark:divide-gray-700" />
+    </div>
+  ),
+  th: (props) => (
+    <th {...props} className="px-4 py-2 text-left font-bold text-gray-900 dark:text-gray-100" />
+  ),
+  td: (props) => (
+    <td {...props} className="px-4 py-2 text-gray-700 dark:text-gray-300" />
   ),
 };
