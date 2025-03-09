@@ -6,12 +6,6 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 export function ThemeSwitch() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -26,20 +20,22 @@ export function ThemeSwitch() {
     <Button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="hidden h-10 w-10 p-2 transition-all md:block"
+      variant="outline"
+      size="icon"
+      className="h-10 w-10 rounded-md border border-input bg-background p-2 transition-colors hover:text-gray-900 dark:hover:text-gray-200"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
       {mounted && isDark ? (
         <div
           className={`transition-opacity duration-300 ${isDark ? 'opacity-100' : 'opacity-0'}`}
         >
-          <Moon />
+          <Moon className="h-5 w-5" />
         </div>
       ) : (
         <div
           className={`transition-opacity duration-300 ${isDark ? 'opacity-0' : 'opacity-100'}`}
         >
-          <Sun />
+          <Sun className="h-5 w-5" />
         </div>
       )}
     </Button>

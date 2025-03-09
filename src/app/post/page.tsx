@@ -26,7 +26,9 @@ async function fetcher(): Promise<Post[]> {
 
 export const metadata: Metadata = {
   title: 'Blog Posts | Ethan Huang',
+
   description: 'Read my latest thoughts and insights on technology, programming, and more.',
+
   openGraph: {
     title: 'Blog Posts | Ethan Huang',
     description: 'Read my latest thoughts and insights on technology, programming, and more.',

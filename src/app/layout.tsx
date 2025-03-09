@@ -46,10 +46,10 @@ export default function RootLayout({
           disableTransitionOnChange
           enableColorScheme={true}
         >
-          <div className="h-full w-11/12 flex-1 md:w-3/5">
-            <div className="container mx-auto h-full min-w-full px-6 antialiased">
+          <div className="h-full w-full max-w-3xl flex-1">
+            <div className="mx-auto h-full w-full px-4 sm:px-6 lg:px-8 antialiased">
               <Header />
-              <div className="mx-auto w-full overflow-auto px-4">
+              <div className="prose dark:prose-dark mx-auto w-full max-w-none overflow-auto">
                 {children}
               </div>
             </div>
