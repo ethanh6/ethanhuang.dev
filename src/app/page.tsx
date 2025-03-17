@@ -10,7 +10,7 @@ export default function Home() {
         {' '}
         I'm a <span className="highlight">Software Engineer</span> specializing
         in building scalable <span className="highlight"> full-stack </span>
-        applications and managing reliable{' '}
+        applications and managing reliable and scalable {' '}
         <span className="highlight">infrastructure</span>. I focus on designing
         efficient systems that solve real-world challenges and drive operational
         success.{' '}
@@ -22,12 +22,8 @@ export default function Home() {
         that tackle complex challenges while ensuring reliability and
         scalability.{' '}
       </p>
-      <p className="highlight"> I'm currently looking for new career opportunities! </p>
 
-      <p className="">
-        I'm a software engineer with a passion for building scalable and
-        reliable systems. I'm currently looking for new career opportunities!
-      </p>
+      <p className="highlight"> I'm currently looking for new career opportunities! </p>
 
       <p className="">
         Feel free to reach out to me on{' '}

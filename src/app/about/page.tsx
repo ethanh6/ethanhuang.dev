@@ -43,10 +43,6 @@ const Home: NextPage<Props> = () => {
         <p>I care about:</p>
         <ul className="list-disc space-y-2 pl-6">
           <li>
-            <span className="highlight">Learning</span>. I learn cool things
-            across psychology, philosophy, and science.
-          </li>
-          <li>
             <span className="highlight">Software Development</span>. Full Stack and DevOps. See more
             in the{' '}
             <a href="/skill" className="highlight-link">
@@ -60,26 +56,16 @@ const Home: NextPage<Props> = () => {
             page.
           </li>
           <li>
+            <span className="highlight">Learning</span>. I learn things
+            across psychology and science.
+          </li>
+          <li>
             <span className="highlight">Neovim</span>. Many years ago I started
             coding in Neovim, and I have never stopped loving it.
           </li>
           <li>
-            <span className="highlight">Blockchain</span>. DeFi and DEX.
-          </li>
-          <li>
-            <span className="highlight">Investing</span>. Surfing with the
-            market is fun.
-          </li>
-          <li>
             <span className="highlight">Basketball</span>. Still sharpening my
             jump shots.
-          </li>
-          <li>
-            <span className="highlight">Music</span>. Polyphia, Dream Theater,
-            GorDoN and Jay Chou.
-          </li>
-          <li>
-            <span className="highlight">Philosophy</span>. Stoicism.
           </li>
           <li>
             <span className="highlight">Coffee</span>. My morning coffee routine
