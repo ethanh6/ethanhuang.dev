@@ -1,28 +1,6 @@
 import PostList from '@/components/PostList';
 import type { Metadata } from 'next';
-
-interface Post {
-  title: string;
-  slug: string;
-  date: string;
-  excerpt?: string;
-  readingTime?: string;
-}
-
-async function fetcher(): Promise<Post[]> {
-  try {
-    const client = await import('../../lib/mongodb/connect').then(
-      (mod) => mod.default,
-    );
-    const db = client.db('blog-content');
-    const collection = db.collection('posts');
-    const posts = await collection.find({}).toArray();
-    return JSON.parse(JSON.stringify(posts));
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    return [];
-  }
-}
+import { getPosts } from '@/lib/markdown';
 
 export const metadata: Metadata = {
   title: 'Blog Posts | Ethan Huang',
@@ -37,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PostsPage() {
-  const posts = await fetcher();
+  const posts = await getPosts();
   return (
     <div className="my-8">
       <div className="mb-12 text-center">

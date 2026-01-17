@@ -11,26 +11,7 @@ services:
     command: npm run dev
     ports:
       - '3001:3000'
-    depends_on:
-      - mongodb
     volumes:
       - ../../:/app
       - /app/node_modules
       - /app/.next
-
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
-    restart: always
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: 1234
-    ports:
-      - '27017:27017'
-    expose:
-      - '27017'
-    volumes:
-      - db-data:/data/db
-
-volumes:
-  db-data:
