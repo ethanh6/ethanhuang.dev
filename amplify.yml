@@ -15,3 +15,9 @@ frontend:
     paths:
       - .next/cache/**/*
       - .npm/**/*
+  # Custom headers for CLI support - ensures proper content-type handling
+  customHeaders:
+    - pattern: '/api/**'
+      headers:
+        - key: 'Cache-Control'
+          value: 'public, max-age=300, s-maxage=600'
