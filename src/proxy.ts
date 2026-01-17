@@ -29,6 +29,7 @@ that tackle complex challenges while ensuring reliability and scalability.
 📚 More (use curl):
    • curl https://ethanhuang.dev/posts    - Blog posts
    • curl https://ethanhuang.dev/resume   - Resume
+   • curl https://ethanhuang.dev/status   - Site status
 
 🌐 View in browser: https://ethanhuang.dev
 `;
@@ -40,7 +41,7 @@ function getResumeContent(): string {
 ║                    ETHAN HUANG - RESUME                        ║
 ╚════════════════════════════════════════════════════════════════╝
 
-📄 Download PDF: https://ethanhuang.dev/files/Resume-Ethan-Huang.pdf
+     wget https://ethanhuang.dev/files/Resume-Ethan-Huang.pdf     
 
 ═══════════════════════════════════════════════════════════════════
                      PROFESSIONAL EXPERIENCE
@@ -112,6 +113,7 @@ Available CLI endpoints:
   • curl https://ethanhuang.dev          - Homepage
   • curl https://ethanhuang.dev/posts    - Blog posts
   • curl https://ethanhuang.dev/resume   - Resume
+  • curl https://ethanhuang.dev/status   - Site status
 
 View this page in your browser:
   https://ethanhuang.dev${pathname}
@@ -119,32 +121,35 @@ View this page in your browser:
 }
 
 // AWS Amplify uses 'proxy' instead of 'middleware'
-export function proxy(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const userAgent = request.headers.get('user-agent') || '';
   const pathname = request.nextUrl.pathname;
 
   // Check if the request is from curl or similar CLI tools
   const isCurlRequest =
     userAgent.toLowerCase().includes('curl') ||
-    userAgent.toLowerCase().includes('wget') ||
-    userAgent.toLowerCase().includes('httpie');
+    userAgent.toLowerCase().includes('wget');
 
-  // If not a curl request, continue normally (serve HTML)
+  // Handle browser redirects
   if (!isCurlRequest) {
+    // Redirect /posts to /post for browsers
+    if (pathname === '/posts') {
+      return NextResponse.redirect(new URL('/post', request.url));
+    }
     return NextResponse.next();
   }
 
   // Handle CLI requests
   const headers = { 'Content-Type': 'text/plain; charset=utf-8' };
 
-  // Route: Homepage
+  // Route: /
   if (pathname === '/' || pathname === '') {
     return new NextResponse(getHomeContent(), { headers });
   }
 
-  // Route: Posts - rewrite to API route (Edge Runtime can't use fs)
-  if (pathname === '/posts' || pathname === '/post') {
-    return NextResponse.rewrite(new URL('/api/posts', request.url));
+  // Route: Posts - rewrite both /post and /posts to route handler
+  if (pathname === '/post' || pathname === '/posts') {
+    return NextResponse.rewrite(new URL('/posts', request.url));
   }
 
   // Route: Resume
@@ -152,8 +157,8 @@ export function proxy(request: NextRequest) {
     return new NextResponse(getResumeContent(), { headers });
   }
 
-  // Route: API endpoints (let API routes handle these)
-  if (pathname.startsWith('/api')) {
+  // Route: Status - let route handler serve CLI content
+  if (pathname === '/status') {
     return NextResponse.next();
   }
 
@@ -166,7 +171,5 @@ export function proxy(request: NextRequest) {
 
 // Run on all routes except static files
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|files|images).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|files|images).*)'],
 };

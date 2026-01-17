@@ -1,21 +1,8 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 import { getPosts } from '@/lib/markdown';
 
-export async function GET(request: NextRequest) {
-  const userAgent = request.headers.get('user-agent') || '';
-
-  // Check if the request is from curl or similar CLI tools
-  const isCurlRequest =
-    userAgent.toLowerCase().includes('curl') ||
-    userAgent.toLowerCase().includes('wget') ||
-    userAgent.toLowerCase().includes('httpie');
-
-  // If accessed from a browser, redirect to posts page
-  if (!isCurlRequest) {
-    return NextResponse.redirect(new URL('/post', request.url));
-  }
-
+// CLI requests are routed here by proxy.ts
+export async function GET() {
   try {
     const posts = await getPosts();
 
