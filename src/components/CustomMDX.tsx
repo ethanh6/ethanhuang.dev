@@ -64,15 +64,13 @@ export const CustomMdxComponent = {
   },
   img: (props) => {
     return (
-      <div className="my-8">
-        <Image
-          width={2000}
-          height={500}
-          {...(props as ImageProps)}
-          className="rounded-lg shadow-lg"
-          alt={props.alt || ''}
-        />
-      </div>
+      <Image
+        width={2000}
+        height={500}
+        {...(props as ImageProps)}
+        className="my-8 rounded-lg shadow-lg"
+        alt={props.alt || ''}
+      />
     );
   },
   ol: (props) => (
