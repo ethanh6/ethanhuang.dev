@@ -1,24 +1,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export async function proxy(request: NextRequest) {
-  const userAgent = request.headers.get('user-agent') || '';
-
-  // Check if the request is from curl or similar CLI tools
-  const isCurlRequest =
-    userAgent.toLowerCase().includes('curl') ||
-    userAgent.toLowerCase().includes('wget') ||
-    userAgent.toLowerCase().includes('httpie');
-
-  if (!isCurlRequest) {
-    return NextResponse.next();
-  }
-
-  const pathname = request.nextUrl.pathname;
-
-  // Handle different routes
-  if (pathname === '/') {
-    const plainText = `
+// CLI content generators
+function getHomeContent(): string {
+  return `
 ╔════════════════════════════════════════════════════════════════╗
 ║                        ETHAN HUANG                             ║
 ║                    Software Engineer                           ║
@@ -40,39 +25,17 @@ that tackle complex challenges while ensuring reliability and scalability.
 📧 Contact:
    • LinkedIn: https://www.linkedin.com/in/ethanhuang0606/
    • GitHub: https://github.com/ethanh6
-   • Resume: https://ethanhuang.dev/resume
 
-📚 More:
-   • About: https://ethanhuang.dev/about
-   • Skills: https://ethanhuang.dev/skill
-   • Projects: https://ethanhuang.dev/project
-   • Posts: https://ethanhuang.dev/post
+📚 More (use curl):
+   • curl https://ethanhuang.dev/posts    - Blog posts
+   • curl https://ethanhuang.dev/resume   - Resume
+
+🌐 View in browser: https://ethanhuang.dev
 `;
+}
 
-    return new NextResponse(plainText, {
-      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-    });
-  }
-
-  if (pathname === '/post' || pathname === '/posts') {
-    const plainText = `
-╔════════════════════════════════════════════════════════════════╗
-║                        BLOG POSTS                              ║
-╚════════════════════════════════════════════════════════════════╝
-
-Thoughts, tutorials, and insights about technology and programming
-
-Visit https://ethanhuang.dev/post in your browser to see all posts.
-
-💡 You can also view individual posts with: curl https://ethanhuang.dev/post/[slug]
-`;
-    return new NextResponse(plainText, {
-      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-    });
-  }
-
-  if (pathname === '/resume') {
-    const plainText = `
+function getResumeContent(): string {
+  return `
 ╔════════════════════════════════════════════════════════════════╗
 ║                    ETHAN HUANG - RESUME                        ║
 ╚════════════════════════════════════════════════════════════════╝
@@ -135,17 +98,75 @@ DevOps and Infrastructure:
 📧 LinkedIn: https://www.linkedin.com/in/ethanhuang0606/
 💻 GitHub: https://github.com/ethanh6
 `;
-
-    return new NextResponse(plainText, {
-      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-    });
-  }
-
-  // For other routes, continue with normal Next.js rendering
-  return NextResponse.next();
 }
 
-// Configure which routes the middleware should run on
+function getNotFoundContent(pathname: string): string {
+  return `
+╔════════════════════════════════════════════════════════════════╗
+║                      404 - NOT FOUND                           ║
+╚════════════════════════════════════════════════════════════════╝
+
+This page is not available via CLI.
+
+Available CLI endpoints:
+  • curl https://ethanhuang.dev          - Homepage
+  • curl https://ethanhuang.dev/posts    - Blog posts
+  • curl https://ethanhuang.dev/resume   - Resume
+
+View this page in your browser:
+  https://ethanhuang.dev${pathname}
+`;
+}
+
+// AWS Amplify uses 'proxy' instead of 'middleware'
+export function proxy(request: NextRequest) {
+  const userAgent = request.headers.get('user-agent') || '';
+  const pathname = request.nextUrl.pathname;
+
+  // Check if the request is from curl or similar CLI tools
+  const isCurlRequest =
+    userAgent.toLowerCase().includes('curl') ||
+    userAgent.toLowerCase().includes('wget') ||
+    userAgent.toLowerCase().includes('httpie');
+
+  // If not a curl request, continue normally (serve HTML)
+  if (!isCurlRequest) {
+    return NextResponse.next();
+  }
+
+  // Handle CLI requests
+  const headers = { 'Content-Type': 'text/plain; charset=utf-8' };
+
+  // Route: Homepage
+  if (pathname === '/' || pathname === '') {
+    return new NextResponse(getHomeContent(), { headers });
+  }
+
+  // Route: Posts - rewrite to API route (Edge Runtime can't use fs)
+  if (pathname === '/posts' || pathname === '/post') {
+    return NextResponse.rewrite(new URL('/api/posts', request.url));
+  }
+
+  // Route: Resume
+  if (pathname === '/resume') {
+    return new NextResponse(getResumeContent(), { headers });
+  }
+
+  // Route: API endpoints (let API routes handle these)
+  if (pathname.startsWith('/api')) {
+    return NextResponse.next();
+  }
+
+  // 404 for unsupported CLI paths
+  return new NextResponse(getNotFoundContent(pathname), {
+    status: 404,
+    headers,
+  });
+}
+
+// Run on all routes except static files
 export const config = {
-  matcher: ['/', '/post', '/posts', '/resume'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|files|images).*)',
+  ],
 };
