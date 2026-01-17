@@ -1,20 +1,14 @@
 import clsx from 'clsx';
+import { Mail, Github, Linkedin, Facebook, MessageCircle } from 'lucide-react';
 
-import Facebook from './facebook.svg';
-import Github from './github.svg';
-import Linkedin from './linkedin.svg';
-import Mail from './mail.svg';
-import Medium from './medium.svg';
-import Twitter from './twitter.svg';
+type IconComponent = React.ComponentType<{ className?: string }>;
 
-type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
-
-const components: { [key: string]: SVGComponent } = {
-  mail: Mail as SVGComponent,
-  github: Github as SVGComponent,
-  linkedin: Linkedin as SVGComponent,
-  medium: Medium as SVGComponent,
-  facebook: Facebook as SVGComponent,
+const components: { [key: string]: IconComponent } = {
+  mail: Mail,
+  github: Github,
+  linkedin: Linkedin,
+  medium: MessageCircle, // Using MessageCircle as Medium alternative
+  facebook: Facebook,
 };
 
 type Props = {
@@ -23,7 +17,7 @@ type Props = {
 };
 
 const SocialIcon = ({ kind, href }: Props) => {
-  const SocialSvg = components[kind];
+  const Icon = components[kind];
 
   return (
     <a
@@ -33,9 +27,9 @@ const SocialIcon = ({ kind, href }: Props) => {
       href={href}
     >
       <span className="sr-only">{kind}</span>
-      <SocialSvg
+      <Icon
         className={clsx(
-          'h-6 w-6 fill-current text-gray-600 transition-colors dark:text-gray-200',
+          'h-6 w-6 text-gray-600 transition-colors dark:text-gray-200',
           kind === 'mail' && 'dark:hover:text-primary-400 hover:text-amber-300',
           kind === 'github' && 'hover:text-gray-300 dark:hover:text-gray-400',
           kind === 'facebook' &&

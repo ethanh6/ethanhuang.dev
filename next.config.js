@@ -3,7 +3,6 @@ const withMDX = require('@next/mdx')();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   // Support svg import
   // ref: https://dev.to/dolearning/importing-svgs-to-next-js-nna
   webpack: (config) => {
@@ -16,11 +15,6 @@ const nextConfig = {
     config.experiments = { ...config.experiments, topLevelAwait: true };
 
     return config;
-  },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
   },
   typescript: {
     // Dangerously allow production builds to successfully complete even if
