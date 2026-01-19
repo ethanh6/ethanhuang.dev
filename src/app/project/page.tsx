@@ -1,22 +1,27 @@
 import { getProjects } from '@/lib/markdown';
 import ProjectCard from '@/components/ProjectCard';
-import type { NextPage, Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Project',
+  title: 'Projects',
 };
 
-function ProjectLayout({ projects }) {
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+  projects.sort((a, b) => a.order - b.order);
+
   return (
-    <div className="my-8">
-      <div className="mb-12 text-center">
-        <h1 className="highlight text-4xl font-bold">Projects</h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+    <article className="my-8 space-y-8 transition-colors">
+      {/* Header */}
+      <div className="border-b border-gray-200 pb-6 dark:border-gray-700">
+        <h1 className="text-2xl font-bold">Projects</h1>
+        <p className="mt-1 text-gray-500 dark:text-gray-400">
           A collection of my work and experiments
         </p>
       </div>
-      
-      <div className="grid gap-12">
+
+      {/* Project List */}
+      <section className="space-y-6">
         {projects.map((proj, i) => (
           <a
             key={i}
@@ -26,16 +31,7 @@ function ProjectLayout({ projects }) {
             <ProjectCard project={proj} />
           </a>
         ))}
-      </div>
-    </div>
+      </section>
+    </article>
   );
 }
-
-const Home = async () => {
-  const projects = await getProjects();
-  projects.sort((a, b) => a.order - b.order);
-
-  return <ProjectLayout projects={projects} />;
-};
-
-export default Home;

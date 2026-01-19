@@ -4,7 +4,7 @@ import Me from '@images/me.jpg';
 export default function Home() {
   return (
     <article className="my-8 space-y-3 transition-colors md:space-y-5">
-      <p className="highlight text-xl">Hi!</p>
+      <p className="highlight text-2xl">Hi!</p>
       <p className="text-xl">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
@@ -43,26 +43,6 @@ export default function Home() {
         and{' '}
         <a href="/resume" className="highlight-link">
           Resume
-        </a>
-        .
-      </p>
-
-      <p className="">
-        See{' '}
-        <a href="/about" className="highlight-link">
-          more about me
-        </a>
-        , my{' '}
-        <a href="/skill" className="highlight-link">
-          skills
-        </a>
-        ,{' '}
-        <a href="/project" className="highlight-link">
-          projects
-        </a>
-        {''} and{' '}
-        <a href="/post" className="highlight-link">
-          posts
         </a>
         .
       </p>
