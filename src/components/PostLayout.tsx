@@ -7,7 +7,7 @@ export default async function PostLayout({ children }) {
   return (
     <>
       <div className="transition-colors dark:divide-gray-700">
-        <div className="prose prose-quoteless prose-neutral dark:prose-invert">
+        <div className="prose-quoteless">
           {children}
         </div>
       </div>

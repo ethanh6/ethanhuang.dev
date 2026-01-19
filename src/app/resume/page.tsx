@@ -10,7 +10,7 @@ type Props = {};
 
 const Home: NextPage<Props> = () => {
   return (
-    <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 transition-colors md:space-y-5">
+    <article className="my-8 transition-colors md:space-y-5">
       <div className="flex items-center justify-end text-right text-gray-700 dark:text-gray-300">
         <a
           href="/files/Resume-Ethan-Huang.pdf"

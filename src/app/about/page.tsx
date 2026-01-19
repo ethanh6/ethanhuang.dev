@@ -11,7 +11,7 @@ type Props = {};
 
 const Home: NextPage<Props> = () => {
   return (
-    <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 transition-colors">
+    <article className="my-8 transition-colors">
       <div className="space-y-3 md:space-y-5">
         <p>
           {' '}

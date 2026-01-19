@@ -3,14 +3,14 @@ import Me from '@images/me.jpg';
 
 export default function Home() {
   return (
-    <article className="prose dark:prose-dark md:prose-lg prose-p:text-lg my-8 space-y-3 transition-colors md:space-y-5">
-      <p className="highlight text-3xl">Hi!</p>
-      <p className="">I'm Ethan, welcome to my website.</p>
+    <article className="my-8 space-y-3 transition-colors md:space-y-5">
+      <p className="highlight text-xl">Hi!</p>
+      <p className="text-xl">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
         I'm a <span className="highlight">Software Engineer</span> specializing
         in building scalable <span className="highlight"> full-stack </span>
-        applications and managing reliable and scalable {' '}
+        applications and managing reliable and scalable{' '}
         <span className="highlight">infrastructure</span>. I focus on designing
         efficient systems that solve real-world challenges and drive operational
         success.{' '}
@@ -23,7 +23,10 @@ export default function Home() {
         scalability.{' '}
       </p>
 
-      <p className="highlight"> I'm currently looking for new career opportunities! </p>
+      <p className="highlight">
+        {' '}
+        I'm currently looking for new career opportunities!{' '}
+      </p>
 
       <p className="">
         Feel free to reach out to me on{' '}
@@ -49,7 +52,7 @@ export default function Home() {
         <a href="/about" className="highlight-link">
           more about me
         </a>
-        ,{' '}my{' '}
+        , my{' '}
         <a href="/skill" className="highlight-link">
           skills
         </a>

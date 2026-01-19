@@ -47,9 +47,9 @@ export default function RootLayout({
           enableColorScheme={true}
         >
           <div className="h-full w-full max-w-3xl flex-1">
-            <div className="mx-auto h-full w-full px-4 sm:px-6 lg:px-8 antialiased">
+            <div className="mx-auto h-full w-full px-4 antialiased sm:px-6 lg:px-8">
               <Header />
-              <div className="prose dark:prose-dark mx-auto w-full max-w-none overflow-auto">
+              <div className="prose dark:prose-dark mx-auto w-full max-w-none overflow-auto text-[18px]">
                 {children}
               </div>
             </div>
