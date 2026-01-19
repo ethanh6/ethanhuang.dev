@@ -18,7 +18,7 @@ export default function Header() {
           <CustomLink
             href="/"
             aria-label={headerConfigs.title}
-            className="hidden font-semibold transition-colors hover:text-slate-400 lg:block"
+            className="hidden font-semibold transition-colors hover:text-slate-400 dark:text-[#cc7c5e] lg:block"
           >
             {headerConfigs.title}
           </CustomLink>
@@ -26,7 +26,7 @@ export default function Header() {
           <CustomLink
             href="/"
             aria-label={headerConfigs.title}
-            className="block font-semibold transition-colors hover:text-slate-400 lg:hidden"
+            className="block font-semibold transition-colors hover:text-slate-400 dark:text-[#cc7c5e] lg:hidden"
           >
             {'EH'}
           </CustomLink>
@@ -38,7 +38,7 @@ export default function Header() {
                 <CustomLink
                   key={i}
                   href={link.href}
-                  className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400 underline underline-offset-8' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
+                  className={`p-3 font-medium transition-colors hover:text-slate-300 ${current_path === link.title ? 'text-slate-400 underline underline-offset-8 dark:text-[#cc7c5e]' : ''} dark:text-gray-100 dark:hover:text-gray-300`}
                 >
                   {link.title}
                 </CustomLink>
