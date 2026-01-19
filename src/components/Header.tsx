@@ -10,7 +10,7 @@ export default function Header() {
   const current_path = usePathname().split('/')[1] || 'home';
 
   return (
-    <header className="sticky top-0 z-10 w-full bg-background pt-8 pb-4 transition-colors">
+    <header className="sticky top-0 z-10 w-full bg-background pb-4 pt-8 transition-colors">
       <div className="mx-auto w-full max-w-3xl">
         {/* Combined the flex and justify-between classes */}
         <div className="flex items-center justify-between">
@@ -32,7 +32,7 @@ export default function Header() {
           </CustomLink>
 
           {/* Render navigation links */}
-          <div className="flex items-center text-base leading-5">
+          <div className="flex items-center gap-2 text-base leading-5">
             <div className="hidden md:block">
               {headerConfigs.navLinks.map((link, i) => (
                 <CustomLink
