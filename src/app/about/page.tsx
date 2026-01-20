@@ -91,10 +91,7 @@ const Home: NextPage<Props> = () => {
         <div className="space-y-4 border-l-2 border-gray-300 pl-6 dark:border-gray-600">
           <p>
             If you'd like to get in touch, shoot me a message on{' '}
-            <span className="highlight-link">
-              ethanhuang0606 at gmail dot com
-            </span>
-            .
+            <span className="highlight-link">ethan at ethanhuang dot dev</span>.
           </p>
           <p>
             You can also find me on{' '}
