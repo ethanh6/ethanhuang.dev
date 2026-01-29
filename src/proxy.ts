@@ -6,19 +6,19 @@ function getHomeContent(): string {
   return `
 ╔════════════════════════════════════════════════════════════════╗
 ║                        ETHAN HUANG                             ║
-║                    Software Engineer                           ║
+║                  Software Engineer, SRE                        ║
 ╚════════════════════════════════════════════════════════════════╝
 
 Hi! I'm Ethan, welcome to my website.
 
-I'm a Software Engineer specializing in building scalable full-stack
-applications and managing reliable and scalable infrastructure. I focus
-on designing efficient systems that solve real-world challenges and
-drive operational success.
+I'm a Software Engineer and SRE specializing in building reliable
+infrastructure and scalable distributed systems. I focus on designing
+efficient systems that solve real-world challenges and drive operational
+success.
 
-With expertise in TypeScript, React.js, Next.js, Express.js, GraphQL,
-Kubernetes, Docker, and ArgoCD, I deliver robust, innovative solutions
-that tackle complex challenges while ensuring reliability and scalability.
+With expertise in Go, Kubernetes, ArgoCD, Prometheus, and GitOps, I build
+and maintain production infrastructure serving millions of users while
+ensuring reliability and scalability.
 
 🔍 I'm currently looking for new career opportunities!
 
@@ -39,59 +39,76 @@ function getResumeContent(): string {
   return `
 ╔════════════════════════════════════════════════════════════════╗
 ║                    ETHAN HUANG - RESUME                        ║
+║                   Software Engineer, SRE                       ║
 ╚════════════════════════════════════════════════════════════════╝
 
-     wget https://ethanhuang.dev/files/Resume-Ethan-Huang.pdf     
+                 Download the resume with wget
+
+          wget https://ethanhuang.dev/files/Resume-Ethan-Huang.pdf
 
 ═══════════════════════════════════════════════════════════════════
                      PROFESSIONAL EXPERIENCE
 ═══════════════════════════════════════════════════════════════════
 
-🏢 Software Engineer @ Supermicro
-📍 San Jose, CA | Nov. 2023 - Current
+🏢 Software Engineer, SRE @ SpaceX (Starlink)
+📍 Sunnyvale, CA | Jun. 2025 - Jan. 2026
 
-As a core member of a small yet critical team, I develop scalable
-internal applications and manage on-premises Kubernetes infrastructure
-to support production processes, focusing on robust Full-Stack solutions,
-database optimization, and multi-region cluster orchestration.
-
-Full Stack Development:
-  • Develop and optimize 10+ mission-critical services using TypeScript,
-    React, Express, GraphQL Apollo, and RESTful APIs
-  • Manage databases: MariaDB, MSSQL, Cassandra, ScyllaDB
-  • Maintain event-driven communication with Kafka
-  • Reduced operational overhead by 50% on global production lines
-  • Refactored legacy codebases, increasing test coverage to 97%+
-  • Boosted GraphQL performance by 95%
-  • Orchestrated multi-cluster data operations for 2 TB of data
-
-DevOps and Infrastructure:
-  • Bootstrap and manage 20+ multi-region on-premises Kubernetes clusters
-  • Spearheaded ArgoCD and GitOps adoption across 10+ applications
-  • Designed CI/CD pipelines with ArgoCD, DroneCI, Helm, and Kustomize
-  • Enhanced observability with Prometheus and Grafana
-  • Optimized Docker environments, reducing setup time by 60%
+SRE & Infrastructure:
+  • Spearheaded in-house Kubernetes operators for CockroachDB using Go
+    and kubebuilder, building 8 controllers for authentication, backup
+    restoration, schema migrations, and multi-region data synchronization
+  • Executed zero-downtime production database migrations using ArgoCD
+    and in-house K8s operator, maintaining 99.9%+ availability
+  • Engineered Kubernetes operator conversion webhook to upgrade 100+
+    legacy custom resources for 60+ microservices
+  • Transformed infrastructure provisioning from Helm to Jsonnet for 10+
+    microservices across all environments
+  • Right-sized Kubernetes replicas across 60+ services, achieving
+    $50K/month ($600K annualized) in savings
+  • Maintained 99.9%+ uptime SLO for starlink.com serving millions of users
 
 -------------------------------------------------------------------
 
-🏢 Software Engineer @ NavisX (Startup)
+🏢 Software Engineer @ Supermicro
+📍 San Jose, CA | Nov. 2023 - May 2025
+
+SRE & Infrastructure:
+  • Architected and operated 25+ highly available, on-premises Kubernetes
+    clusters managing hundreds of servers across 4 regions
+  • Owned ArgoCD platform end-to-end, driving GitOps adoption across the
+    organization to manage 20+ applications across 25+ clusters
+  • Engineered CI/CD pipelines as sole infrastructure engineer on a
+    4-person team, reducing deployment lead time by 50%
+  • Implemented observability stack with Prometheus and Grafana across
+    25+ production clusters with 500+ custom metrics
+
+Full Stack Development:
+  • Reduced GraphQL query latency by 95%, cutting API response times
+    from seconds to milliseconds
+  • Developed and optimized 10+ mission-critical services using
+    TypeScript, React, Express, GraphQL Apollo, and RESTful APIs
+  • Refactored legacy codebases and increased test coverage from ~40%
+    to 97%+ using Jest, reducing production bugs by 70%
+
+-------------------------------------------------------------------
+
+🏢 Software Engineer @ NavisX-AlluringSelf (Startup)
 📍 Remote | Mar. 2023 - Oct. 2023
 
-  • Developed web application with 20+ custom React components
-  • Used Next.js 13, TailwindCSS, TypeScript, and Zustand
-  • Led technical team at early-stage startup
+  • Led engineering at 4-person startup, architecting full-stack
+    application with React and Next.js, shipping MVP to 100+ beta users
 
 ═══════════════════════════════════════════════════════════════════
                           EDUCATION
 ═══════════════════════════════════════════════════════════════════
 
 🎓 Cornell Tech, Cornell University
-   Master of Engineering in Computer Science, 2022
-   New York, NY
+   Master of Engineering in Computer Science, May 2022
+   Merit Scholarship | New York, NY
 
-🎓 University of California - San Diego
-   Bachelor of Science in Computer Science, 2021
-   La Jolla, CA
+🎓 University of California, San Diego
+   Bachelor of Science in Computer Science, Jun. 2021
+   GPA: 3.94 | Provost Honors | La Jolla, CA
 
 ═══════════════════════════════════════════════════════════════════
 

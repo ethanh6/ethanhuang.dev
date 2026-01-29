@@ -8,19 +8,18 @@ export default function Home() {
       <p className="text-xl">I'm Ethan, welcome to my website.</p>
       <p className="">
         {' '}
-        I'm a <span className="highlight">Software Engineer</span> specializing
-        in building scalable <span className="highlight"> full-stack </span>
-        applications and managing reliable and scalable{' '}
-        <span className="highlight">infrastructure</span>. I focus on designing
-        efficient systems that solve real-world challenges and drive operational
-        success.{' '}
+        I'm a <span className="highlight">Software Engineer</span> and{' '}
+        <span className="highlight">SRE</span> specializing in building reliable{' '}
+        <span className="highlight">infrastructure</span> and scalable{' '}
+        <span className="highlight">distributed systems</span>. I focus on
+        designing efficient systems that solve real-world challenges and drive
+        operational success.{' '}
       </p>
       <p className="">
         {' '}
-        With expertise in TypeScript, React.js, Next.js, Express.js, GraphQL,
-        Kubernetes, Docker, and ArgoCD, I deliver robust, innovative solutions
-        that tackle complex challenges while ensuring reliability and
-        scalability.{' '}
+        With expertise in Go, Kubernetes, ArgoCD, Prometheus, and GitOps, I
+        build and maintain production infrastructure serving millions of users
+        while ensuring reliability and scalability.{' '}
       </p>
 
       <p className="highlight">

@@ -37,6 +37,6 @@ export async function getPosts() {
 }
 
 export async function getProjects() {
-  const projects = getMDXData('Project');
+  const projects = await getMDXData('Project');
   return projects;
 }

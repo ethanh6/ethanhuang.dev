@@ -16,6 +16,8 @@ export function ThemeSwitch() {
 
   const isDark = theme === 'dark' || resolvedTheme === 'dark';
 
+  const showDark = mounted && isDark;
+
   return (
     <Button
       aria-label="Toggle Dark Mode"
@@ -25,16 +27,12 @@ export function ThemeSwitch() {
       className="h-10 w-10 rounded-md border border-input bg-background p-2 transition-colors hover:text-gray-900 dark:hover:text-gray-200"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
-      {mounted && isDark ? (
-        <div
-          className={`transition-opacity duration-300 ${isDark ? 'opacity-100' : 'opacity-0'}`}
-        >
+      {showDark ? (
+        <div className="transition-opacity duration-300 opacity-100">
           <Moon className="h-5 w-5" />
         </div>
       ) : (
-        <div
-          className={`transition-opacity duration-300 ${isDark ? 'opacity-0' : 'opacity-100'}`}
-        >
+        <div className="transition-opacity duration-300 opacity-100">
           <Sun className="h-5 w-5" />
         </div>
       )}

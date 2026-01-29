@@ -25,14 +25,14 @@ const Home: NextPage<Props> = () => {
             visiting!
           </p>
           <p>
-            I'm currently based in the San Francisco Bay Area. I work as a{' '}
-            <span className="highlight">Software Engineer</span> at{' '}
-            <span className="highlight">Supermicro</span>.
-          </p>
-          <p>
-            I focus on <span className="highlight">full-stack development</span>
-            , <span className="highlight">infrastructure</span>, and{' '}
-            <span className="highlight">DevOps</span>.
+            I'm currently based in the San Francisco Bay Area, and I've worked
+            as <span className="highlight">Software Engineer</span> at{' '}
+            <span className="highlight">SpaceX (Starlink)</span> and{' '}
+            <span className="highlight">Supermicro</span>, focusing on{' '}
+            <span className="highlight">infrastructure</span>,{' '}
+            <span className="highlight">SRE</span> and{' '}
+            <span className="highlight">DevOps</span> as well as{' '}
+            <span className="highlight">full-stack development</span>.
           </p>
           <p>
             Previously, I graduated from{' '}
