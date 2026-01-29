@@ -1,5 +1,4 @@
 import type { NextPage, Metadata } from 'next';
-import { CopyableCommand } from '@/components/CopyableCommand';
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -11,48 +10,34 @@ const Home: NextPage<Props> = () => {
   return (
     <article className="my-8 space-y-8 transition-colors">
       {/* Header */}
-      <div className="space-y-4 border-b border-gray-200 pb-6 dark:border-gray-700">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold">Resume</h1>
-            <p className="mt-1 text-gray-500 dark:text-gray-400">
-              Software Engineer
-            </p>
-          </div>
-          <a
-            href="/files/Resume-Ethan-Huang.pdf"
-            download="EthanHuangResume.pdf"
-            className="group flex items-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-bold text-white transition-all hover:bg-gray-700 dark:bg-gray-200 dark:text-[#cc7c5e] dark:hover:bg-gray-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 transition-transform group-hover:translate-y-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>
-            Download PDF
-          </a>
-        </div>
-        <div className="rounded-md border border-gray-200 bg-gray-50 p-4 font-mono text-sm dark:border-gray-700 dark:bg-gray-800">
-          <p className="text-gray-500 dark:text-gray-500">
-            # View resume in terminal
+      <div className="flex items-center justify-between border-b border-gray-200 pb-6 dark:border-gray-700">
+        <div>
+          <h1 className="text-2xl font-bold">Resume</h1>
+          <p className="mt-1 text-gray-500 dark:text-gray-400">
+            Software Engineer, SRE
           </p>
-          <div className="mt-2 flex items-center justify-between">
-            <code className="text-gray-800 dark:text-gray-100">
-              <span className="text-[#cc7c5e]">$</span> curl
-              https://www.ethanhuang.dev/resume
-            </code>
-            <CopyableCommand command="curl https://www.ethanhuang.dev/resume" />
-          </div>
         </div>
+        <a
+          href="/files/Resume-Ethan-Huang.pdf"
+          download="EthanHuangResume.pdf"
+          className="group flex items-center gap-2 rounded-lg bg-gray-800 px-4 py-2 text-sm font-bold text-white transition-all hover:bg-gray-700 dark:bg-gray-200 dark:text-[#cc7c5e] dark:hover:bg-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 transition-transform group-hover:translate-y-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+          Download PDF
+        </a>
       </div>
 
       {/* Experience */}

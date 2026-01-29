@@ -1,8 +1,8 @@
 export const metadata = {
   title: 'Personal Website',
-  description: 'How I built this website.',
+  description: 'Documentation for ethanhuang.dev',
   slug: 'personal-website',
-  date: '2024-03-30',
+  date: '2026-01-29',
   type: 'Project',
   language: 'english',
   imgAlt: 'personal website image',
@@ -12,37 +12,49 @@ export const metadata = {
   enabled: true,
 };
 
-# Purpose of this website.
+# ethanhuang.dev
 
-A place to serve my stuff. Also urge myself to write more.
+Personal website and portfolio built with Next.js.
 
+<a href="https://github.com/ethanh6/ethanhuang.dev" className="highlight-link">View source on GitHub</a>
 
-# Technologies
+---
 
-Source code: <a href="https://github.com/ethanh6/ethanhuang.dev" className="highlight-link"> ethanh6/ethanhuang.dev </a>
+## CLI usage
 
-- Web: Next.js
-- Style: Tailwind CSS
-- Language: TypeScript
-- Writing & Content: MDX
-- Hosting: AWS Amplify
-- Domain Name: AWS Route 53
-- Development: Docker Compose
+This site supports terminal access via `curl`.
 
-# Feature
+```bash
+curl https://ethanhuang.dev          # Homepage
+curl https://ethanhuang.dev/resume   # Resume
+curl https://ethanhuang.dev/posts    # Blog posts
+curl https://ethanhuang.dev/status   # Site status
+```
 
-## UI
+Download resume as PDF:
 
-- Light / Dark Mode
-- Writing with local MDX files
-- Responsive / mobile friendly interface
+```bash
+wget https://ethanhuang.dev/files/Resume-Ethan-Huang.pdf
+```
 
-## CLI interaction
+---
 
-A few endpoints are made cli friendly with NextJS proxy.
+## Tech stack
 
-- home: `curl https://ethanhuang.dev`
-- about: `curl https://ethanhuang.dev/about`
-- post: `curl https://ethanhuang.dev/post`
-- resume: `curl https://ethanhuang.dev/resume`
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Content:** MDX
+- **Hosting:** AWS Amplify
+- **Features:** Light/dark theme, responsive design
 
+---
+
+## Local development
+
+```bash
+git clone https://github.com/ethanh6/ethanhuang.dev.git
+cd ethanhuang.dev
+npm install
+npm run dev
+```

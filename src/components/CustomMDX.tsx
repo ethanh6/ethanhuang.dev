@@ -117,10 +117,19 @@ export const CustomMdxComponent = {
       <table {...props} className="min-w-full divide-y divide-gray-200 dark:divide-gray-700" />
     </div>
   ),
+  thead: (props) => (
+    <thead {...props} className="bg-gray-50 dark:bg-gray-800" />
+  ),
+  tbody: (props) => (
+    <tbody {...props} className="divide-y divide-gray-200 dark:divide-gray-700" />
+  ),
+  tr: (props) => (
+    <tr {...props} />
+  ),
   th: (props) => (
-    <th {...props} className="px-4 py-2 text-left font-bold text-gray-900 dark:text-gray-100" />
+    <th {...props} className="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100" />
   ),
   td: (props) => (
-    <td {...props} className="px-4 py-2 text-gray-700 dark:text-gray-300" />
+    <td {...props} className="px-4 py-3 text-sm text-gray-700 dark:text-gray-300" />
   ),
 };

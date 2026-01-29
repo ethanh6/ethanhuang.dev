@@ -22,7 +22,7 @@ export default async function PostsPage() {
       <div className="border-b border-gray-200 pb-6 dark:border-gray-700">
         <h1 className="text-2xl font-bold">Posts</h1>
         <p className="mt-1 text-gray-500 dark:text-gray-400">
-          Thoughts, tutorials, and insights
+          Thoughts, writings, etc.
         </p>
       </div>
 
