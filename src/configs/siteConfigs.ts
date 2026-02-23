@@ -9,7 +9,7 @@ export const siteConfigs = {
     'Personal website with modern frontend technologies like Next.js, Tailwind CSS, Contentlayer.',
   author: 'Ethan Huang',
   credit: 'Ethan Huang',
-  email: 'eh543@cornell.edu',
+  email: 'ethanhuang0606@gmail.com',
   fqdn: fqdn,
   logoPath: logoPath,
   logoUrl: fqdn + logoPath,

@@ -69,6 +69,7 @@ const Home: NextPage<Props> = () => {
               'HashiCorp Vault',
               'Playwright',
               'GCP',
+              'Bazel',
             ].map((skill) => (
               <span
                 key={skill}
